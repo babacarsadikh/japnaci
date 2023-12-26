@@ -22,7 +22,7 @@ const Donate = (props) => {
         const paddedRandomNumber = randomDigits.toString().padStart(7, '0');
         const randomRef = 'DKI' + paddedRandomNumber;
         var succeslink = 'https://dkrinfos.com/reussi.php';
-        var failedlink = 'https://dkrinfos.com/echec.php';
+        var failedlink = 'https://japnaci.vercel.app/404';
         var ref = randomRef;
         // var samamontant = montant
         var samamontant = isMontant1000Selected ? 1000 : montantSaisi; // Utilise 1000 CFA si le bouton radio "Montant de base (1000 CFA)" est sélectionné, sinon utilise la valeur saisie
