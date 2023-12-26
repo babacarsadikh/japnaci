@@ -7,7 +7,6 @@ import hero4 from '/public/images/shape/shape.png'
 import Image from "next/image";
 
 
-
 const Hero = () => {
 
     var settings = {
@@ -25,69 +24,19 @@ const Hero = () => {
         <section className="hero-slider hero-style-1">
             <Slider {...settings}>
                 <div className="slide">
-                    <div className="slide-inner" style={{ backgroundImage: `url(${'/images/slider/slide-1.jpg'})` }}>
-                        <div className="container">
-                            <div className="slide-thumb">
-                                <span>GO FOR HELP</span>
-                            </div>
-                            <div className="slide-title">
-                                <h2>They Are Wait For Some Food.</h2>
-                            </div>
-                            <div data-swiper-parallax="400" className="slide-text">
-                                <p>It is a long established fact that a reader will be distracted the readable content of a page when looking at its layout point of using of letters, as opposed.</p>
-                            </div>
+                    <div className="slide-inner" style={{ backgroundImage: `url(${'/images/slider/back1.jpg'})` }}>
+                        <div className="container" style={{marginTop:'15%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
+                           
+                         
                             <div className="slide-btns">
-                                <Link href="/donate" className="theme-btn">Donate Now<i className="fa fa-angle-double-right" aria-hidden="true"></i></Link>
+                                <Link href="/donate" className="theme-btn">Faire un don maintenant<i className="fa fa-angle-double-right" aria-hidden="true"></i></Link>
                             </div>
                         </div>
-                        <div className="slide-shape">
-                            <Image src={hero4} alt="" />
-                        </div>
+                       
                     </div>
                 </div>
-                <div className="slide">
-                    <div className="slide-inner" style={{ backgroundImage: `url(${'/images/slider/slide-2.jpg'})` }}>
-                        <div className="container">
-                            <div className="slide-thumb">
-                                <span>GO FOR HELP</span>
-                            </div>
-                            <div className="slide-title">
-                                <h2>They Are Wait For Some Food.</h2>
-                            </div>
-                            <div data-swiper-parallax="400" className="slide-text">
-                                <p>It is a long established fact that a reader will be distracted the readable content of a page when looking at its layout point of using of letters, as opposed.</p>
-                            </div>
-                            <div className="slide-btns">
-                                <Link href="/donate" className="theme-btn">Donate Now<i className="fa fa-angle-double-right" aria-hidden="true"></i></Link>
-                            </div>
-                        </div>
-                        <div className="slide-shape">
-                            <Image src={hero4} alt="" />
-                        </div>
-                    </div>
-                </div>
-                <div className="slide">
-                    <div className="slide-inner" style={{ backgroundImage: `url(${'/images/slider/slide-3.jpg'})` }}>
-                        <div className="container">
-                            <div className="slide-thumb">
-                                <span>GO FOR HELP</span>
-                            </div>
-                            <div className="slide-title">
-                                <h2>They Are Wait For Some Food.</h2>
-                            </div>
-                            <div data-swiper-parallax="400" className="slide-text">
-                                <p>It is a long established fact that a reader will be distracted the readable content of a page when looking at its layout point of using of letters, as opposed.</p>
-                            </div>
-                            <div className="slide-btns">
-                                <Link href="/donate" className="theme-btn">Donate Now<i className="fa fa-angle-double-right" aria-hidden="true"></i>
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="slide-shape">
-                            <Image src={hero4} alt="" />
-                        </div>
-                    </div>
-                </div>
+               
+               
             </Slider>
         </section>
     )

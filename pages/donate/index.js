@@ -10,7 +10,7 @@ const DonatePage =() => {
     return(
         <Fragment>
             <Navbar/>
-            <PageTitle pageTitle={'Donate Now'} pagesub={'Donate'}/> 
+            {/* <PageTitle pageTitle={'Donate Now'} pagesub={'Donate'}/>  */}
             <Donate/>
             <Footer/>
             <Scrollbar/>

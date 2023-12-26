@@ -61,8 +61,8 @@ const LoginPage = (props) => {
     return (
         <Grid className="loginWrapper">
             <Grid className="loginForm">
-                <h2>Sign In</h2>
-                <p>Sign in to your account</p>
+                <h2>Se connecter</h2>
+                <p>Connectez-vous à votre compte</p>
                 <form onSubmit={submitForm}>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
@@ -91,7 +91,7 @@ const LoginPage = (props) => {
                                 variant="outlined"
                                 name="password"
                                 type="password"
-                                label="Password"
+                                label="Mot de pass"
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
@@ -101,22 +101,18 @@ const LoginPage = (props) => {
                             {validator.message('password', value.password, 'required')}
                         </Grid>
                         <Grid item xs={12}>
-                            <Grid className="formAction">
+                            {/* <Grid className="formAction">
                                 <FormControlLabel
                                     control={<Checkbox checked={value.remember} onChange={rememberHandler}/>}
                                     label="Remember Me"
                                 />
                                 <Link href="/forgot-password">Forgot Password?</Link>
-                            </Grid>
+                            </Grid> */}
                             <Grid className="formFooter">
-                                <Button fullWidth className="cBtnTheme" type="submit">Login</Button>
+                                <Button fullWidth className="cBtnTheme" type="submit">Se connecter</Button>
                             </Grid>
-                            <Grid className="loginWithSocial">
-                                <Button className="facebook"><i className="fa fa-facebook"></i></Button>
-                                <Button className="twitter"><i className="fa fa-twitter"></i></Button>
-                                <Button className="linkedin"><i className="fa fa-linkedin"></i></Button>
-                            </Grid>
-                            <p className="noteHelp">Don't have an account? <Link href="/register">Create free account</Link>
+                          
+                            <p className="noteHelp">Vous n'avez pas de compte ? <Link href="/register">Créer un compte </Link>
                             </p>
                         </Grid>
                     </Grid>

@@ -8,18 +8,18 @@ const CtaSection = (props) => {
                 <div className="row">
                     <div className="col-lg-5 col-md-12 col-12">
                         <div className="cta-left">
-                            <h2>If You Want To Join With Us As a Volunteer. Contact Us Today!</h2>
+                            <h2>Si vous souhaitez nous rejoindre en tant que bénévole. Contactez-nous dès aujourd'hui !</h2>
                         </div>
                     </div>
                     <div className="col-lg-6 offset-lg-1 col-md-12 col-12">
                         <div className="cta-wrap">
                             <div className="cta-call">
-                                <span>Call Us!</span>
-                                <h3>00 968 469 876</h3>
+                                <span>Appelez-nous!</span>
+                                <h3>+221 77 700 48 85</h3>
                             </div>
                             <div className="cta-call">
-                                <span>E-mail Us!</span>
-                                <h3>support@gmail.com</h3>
+                                <span>Envoyez-nous un email!</span>
+                                <h3 style={{color: '#ffc039'}}>hello@mac-senegal.com</h3>
                             </div>
                         </div>
                     </div>

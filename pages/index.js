@@ -20,14 +20,14 @@ const HomePage = () => {
         <Fragment>
             <Navbar />
             <Hero />
-            <About />
-            <Features />
+            {/* <About /> */}
+            {/* <Features /> */}
             <Causes />
             <CtaSection />
-            <EventSection />
-            <TeamSection />
-            <Testimonial />
-            <BlogSection/>
+            {/* <EventSection />
+            <TeamSection /> */}
+            {/* <Testimonial /> */}
+            {/* <BlogSection/> */}
             <Partner />
             <Footer />
             <Scrollbar />

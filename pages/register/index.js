@@ -49,19 +49,19 @@ const SignUpPage = (props) => {
         <Grid className="loginWrapper">
 
             <Grid className="loginForm">
-                <h2>Signup</h2>
-                <p>Signup your account</p>
+                <h2>S'inscrire</h2>
+                <p></p>
                 <form onSubmit={submitForm}>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
                             <TextField
                                 className="inputOutline"
                                 fullWidth
-                                placeholder="Full Name"
+                                placeholder=""
                                 value={value.full_name}
                                 variant="outlined"
                                 name="full_name"
-                                label="Name"
+                                label="Nom complet"
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
@@ -91,11 +91,11 @@ const SignUpPage = (props) => {
                             <TextField
                                 className="inputOutline"
                                 fullWidth
-                                placeholder="Password"
+                                placeholder="Mot de pass"
                                 value={value.password}
                                 variant="outlined"
                                 name="password"
-                                label="Password"
+                                label="Mot de pass"
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
@@ -108,11 +108,11 @@ const SignUpPage = (props) => {
                             <TextField
                                 className="inputOutline"
                                 fullWidth
-                                placeholder="Confirm Password"
+                                placeholder="Confirmer mot de pass"
                                 value={value.password}
                                 variant="outlined"
                                 name="confirm_password"
-                                label="Confirm Password"
+                                label="Confirmer Mot de pass"
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
@@ -123,14 +123,14 @@ const SignUpPage = (props) => {
                         </Grid>
                         <Grid item xs={12}>
                             <Grid className="formFooter">
-                                <Button fullWidth className="cBtn cBtnLarge cBtnTheme" type="submit">Sign Up</Button>
+                                <Button fullWidth className="cBtn cBtnLarge cBtnTheme" type="submit">S'inscrire</Button>
                             </Grid>
-                            <Grid className="loginWithSocial">
+                            {/* <Grid className="loginWithSocial">
                                 <Button className="facebook"><i className="fa fa-facebook"></i></Button>
                                 <Button className="twitter"><i className="fa fa-twitter"></i></Button>
                                 <Button className="linkedin"><i className="fa fa-linkedin"></i></Button>
-                            </Grid>
-                            <p className="noteHelp">Already have an account? <Link href="/login">Return to Sign In</Link>
+                            </Grid> */}
+                            <p className="noteHelp">Vous avez déjà un compte? <Link href="/login">Revenir à la connexion</Link>
                             </p>
                         </Grid>
                     </Grid>

@@ -4,8 +4,10 @@ import Causes from '../../api/cause'
 import Image from 'next/image'
 
 const CauseSection = (props) => {
-    const ClickHandler = () => {
+    const ClickHandler = (cause) => {
         window.scrollTo(10, 0);
+        window.location.href = `/donate?causeId=${cause.id}`;
+
     }
     return (
         <div className="case-area section-padding">
@@ -13,10 +15,9 @@ const CauseSection = (props) => {
                 <div className="col-lg-6 offset-lg-3">
                     <div className="section-title section-title2 text-center">
                         <div className="thumb-text">
-                            <span>CAUSES</span>
+                            <span>CAMPAGNES</span>
                         </div>
-                        <h2>Latest Caused of Khairah.</h2>
-                        <p>It is a long established fact that reader distracted by the the readable content off page looking at its layout point.</p>
+                        <h2>Dernières campagnes</h2>
                     </div>
                 </div>
                 <div className="row">
@@ -27,17 +28,17 @@ const CauseSection = (props) => {
                                     <div className="cause-img">
                                         <Image src={Cause.cImg} alt="" />
                                         <div className="case-btn">
-                                            <Link onClick={ClickHandler} href="/donate" className="theme-btn">Donate Now<i className="fa fa-angle-double-right" aria-hidden="true"></i></Link>
+                                            <button onClick={() => ClickHandler(Cause)} href="/donate" className="theme-btn">faire un geste<i className="fa fa-angle-double-right" aria-hidden="true"></i></button>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="cause-text">
                                     <ul>
-                                        <li><Link onClick={ClickHandler} href="/">GOAL : ${Cause.Goal}</Link></li>
-                                        <li><Link onClick={ClickHandler} href="/">RISED : ${Cause.Raised}</Link></li>
+                                        <li><Link onClick={ClickHandler} href="/">BUT : {Cause.Goal} CFA</Link></li>
+                                        <li><Link onClick={ClickHandler} href="/">Recueillis : {Cause.Raised} CFA</Link></li>
                                     </ul>
                                     <h3><Link onClick={ClickHandler} href='/cause-single/[slug]' as={`/cause-single/${Cause.slug}`}>{Cause.cTitle}</Link></h3>
-                                    <p>It is a long established fact that a reader will be distracted.</p>
+                                    {/* <p>It is a long established fact that a reader will be distracted.</p> */}
                                 </div>
                             </div>
                         </div>
