@@ -45,7 +45,7 @@ const Donate = (props) => {
     const [mail, setMail] = useState('');
     const [montant, setMontant] = useState(1000); // Initialisez avec 1000 CFA par défaut
     const [montantSaisi, setMontantSaisi] = useState(''); // Pour gérer la saisie utilisateur
-    const [isMontant1000Selected, setIsMontant1000Selected] = useState(false); // Pour gérer la sélection du bouton radio
+    const [isMontant1000Selected, setIsMontant1000Selected] = useState(true); // Pour gérer la sélection du bouton radio
     const [isAutreMontantSelected, setIsAutreMontantSelected] = useState(false);
     const [isMontantInputVisible, setIsMontantInputVisible] = useState(true); // Ajout de cet état
 
@@ -121,7 +121,7 @@ const Donate = (props) => {
                         <div id="Donations">
                             <form onSubmit={SubmitHandler} action="#">
                                 <div className="tp-donations-amount">
-                                    <h2>Entrez votre donation</h2>
+                                    <h2>Choisissez  votre donation</h2>
                                     <div className="d-flex justify-content-center align-items-center flex-row">
                                         <div className="mb-3">
                                             <label className={`custom-radio-label ${isMontant1000Selected ? 'active' : ''} text-center`}
