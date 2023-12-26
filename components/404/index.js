@@ -11,12 +11,11 @@ const Error = (props) => {
                     <div className="col col-xs-12">
                         <div className="content clearfix">
                             <div className="error">
-                                <Image src={erimg} alt=""/>
                             </div>
                             <div className="error-message">
-                                <h3>Oops! Page Not Found!</h3>
-                                <p>We’re sorry but we can’t seem to find the page you requested. This might be because you have typed the web address incorrectly.</p>
-                                <Link href="/home" className="theme-btn"><i className="fa fa-angle-double-left"></i> Back to home</Link>
+                                <h3>Oops!Votre paiement a echoué</h3>
+                                <p>veuillez ressayer plutard...</p>
+                                <Link href="/home" className="theme-btn"><i className="fa fa-angle-double-left"></i>Retour</Link>
                             </div>
                         </div>
                     </div>

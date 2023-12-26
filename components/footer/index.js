@@ -48,7 +48,7 @@ const Footer = (props) => {
         <div className="container">
           <div className="row">
             <div className="col col-xs-12">
-              <p className="copyright">&copy; {new Date().getFullYear()} DKINFORMATIQUE. All rights reserved</p>
+              <p className="copyright">&copy; {new Date().getFullYear()} MOBIDEV. All rights reserved</p>
             </div>
           </div>
         </div>
