@@ -19,7 +19,7 @@ const CtaSection = (props) => {
                             </div>
                             <div className="cta-call">
                                 <span>Envoyez-nous un email!</span>
-                                <h3 style={{color: '#ffc039'}}>hello@mac-senegal.com</h3>
+                                <h3 style={{color: '#ffc039'}}>hello@japnaci.com</h3>
                             </div>
                         </div>
                     </div>

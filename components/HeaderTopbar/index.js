@@ -10,7 +10,7 @@ const HeaderTopbar = (props) => {
                         <div className="contact-intro">
                             <ul>
                                 <li><i className="fi flaticon-call"></i>+221 77 700 48 85</li>
-                                <li><i className="fi flaticon-envelope"></i> contact@dkinfo.com</li>
+                                <li><i className="fi flaticon-envelope"></i> contact@japnaci.com</li>
                             </ul>
                         </div>
                     </div>

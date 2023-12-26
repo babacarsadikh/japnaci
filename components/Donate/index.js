@@ -24,14 +24,14 @@ const Donate = (props) => {
         var succeslink = 'https://dkrinfos.com/reussi.php';
         var failedlink = 'https://dkrinfos.com/echec.php';
         var ref = randomRef;
-       // var samamontant = montant
+        // var samamontant = montant
         var samamontant = isMontant1000Selected ? 1000 : montantSaisi; // Utilise 1000 CFA si le bouton radio "Montant de base (1000 CFA)" est sélectionné, sinon utilise la valeur saisie
         if (!samamontant) {
             alert("Veuillez renseigner le montant avant de continuer.");
             return;
         }
 
-         console.log(samamontant);
+        console.log(samamontant);
         sendPaymentInfos(ref,
             'DAKIN14898', 'iDnrqZwm252SnwDuQvtHSIVxUgpmFXLzfLONQOOkH51ylgmlNw',
             'dkrinformatique.sn', succeslink,
@@ -45,7 +45,9 @@ const Donate = (props) => {
     const [mail, setMail] = useState('');
     const [montant, setMontant] = useState(1000); // Initialisez avec 1000 CFA par défaut
     const [montantSaisi, setMontantSaisi] = useState(''); // Pour gérer la saisie utilisateur
-    const [isMontant1000Selected, setIsMontant1000Selected] = useState(true); // Pour gérer la sélection du bouton radio
+    const [isMontant1000Selected, setIsMontant1000Selected] = useState(false); // Pour gérer la sélection du bouton radio
+    const [isAutreMontantSelected, setIsAutreMontantSelected] = useState(false);
+    const [isMontantInputVisible, setIsMontantInputVisible] = useState(true); // Ajout de cet état
 
 
     const SubmitHandler = (e) => {
@@ -76,21 +78,27 @@ const Donate = (props) => {
     return (
         <div className="tp-donation-page-area section-padding">
             <style jsx>{`
-                /* Ajoutez du CSS personnalisé pour styliser les boutons radio */
-                
+    /* Ajoutez du CSS personnalisé pour styliser les boutons radio */
+    .custom-radio-label {
+        background-color: #ffffff; /* Couleur de fond des boutons non sélectionnés */
+        border: 2px solid #1d5d1d; /* Bordure des boutons non sélectionnés */
+        color: #1d5d1d; /* Couleur du texte des boutons non sélectionnés */
+        cursor: pointer;
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin: 4px;
+        transition: background-color 0.3s, color 0.3s;
+    }
 
-                .custom-radio input:checked ~ .checkmark:after {
-                    content: "";
-                    position: absolute;
-                    display: block;
-                    top: 4px;
-                    left: 4px;
-                    width: 12px;
-                    height: 12px;
-                    background-color: #1d5d1d; /* Couleur de la coche lorsque le bouton radio est sélectionné */
-                    border-radius: 3px; /* Bordure arrondie de la coche */
-                }
-            `}</style>
+    .custom-radio-label.active {
+        background-color: #1d5d1d; /* Couleur de fond des boutons sélectionnés */
+        color: #ffffff; /* Couleur du texte des boutons sélectionnés */
+    }
+    .no-border {
+        border: none;
+        background-color: transparent;
+    }
+`}</style>
             <div className="container">
                 <div className="row">
                     <div className="col-lg-8 offset-lg-2">
@@ -115,54 +123,61 @@ const Donate = (props) => {
                                 <div className="tp-donations-amount">
                                     <h2>Entrez votre donation</h2>
                                     <div className="d-flex justify-content-center align-items-center flex-row">
-                            <div className="mb-3 ">
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name="montantType"
-                                        value="1000"
-                                        checked={isMontant1000Selected}
-                                        onChange={() => {
-                                            setIsMontant1000Selected(true);
-                                            setMontant(1000);
-                                            setMontantSaisi('');
-                                        }}
-                                    />
-                                    Montant de base (1000 CFA)
-                                </label>
-                            </div>
-                            <div className="mb-3  ">
-                                <label>
-                                    <input
-                                        type="radio"
-                                        name="montantType"
-                                        value="autre"
-                                        checked={!isMontant1000Selected}
-                                        onChange={() => {
-                                            setIsMontant1000Selected(false);
-                                            setMontantSaisi('');
-                                        }}
-                                    />
+                                        <div className="mb-3">
+                                            <label className={`custom-radio-label ${isMontant1000Selected ? 'active' : ''} text-center`}
+                                                    style={{ alignItems: 'center', justifyContent: 'center' }}
+                                                    >
+                                                <input
+                                                    className="form-control no-border"
+                                                    type="button"
+                                                    name="montantType"
+                                                    // value="1000"
+                                                    onClick={() => {
+                                                        setIsMontant1000Selected(true);
+                                                        setIsAutreMontantSelected(false);
+                                                        setIsMontantInputVisible(false); // Masquez l'input "Entrez un montant"
+                                                        setMontantSaisi('');
+                                                    }}
+                                                />
+                                                Montant de base (1000 CFA)
+                                            </label>
+                                        </div>
+                                        <div className="mb-3 ml-3">
+                                            <label className={`custom-radio-label ${!isMontant1000Selected && isAutreMontantSelected ? 'active' : ''}  text-center`}>
+                                                <input
+                                                    className="form-control no-border"
 
-                                    Autre montant
-                                </label>
-                            </div>
-                        </div>
-                        {!isMontant1000Selected && (
-                            <div className="mb-3 d-flex align-items-center">
-                                <input
-                                    required
-                                    type="number"
-                                    className="form-control"
-                                    name="text"
-                                    id="text"
-                                    placeholder="Entrez un montant"
-                                    value={montantSaisi}
-                                    onChange={(e) => setMontantSaisi(e.target.value)}
-                                />
-                                <span style={{height:"52px", background: "#1d5d1d", color: "white" }} className="input-group-text addon-dollar mb-4">CFA</span>
-                            </div>
-                        )}
+                                                    type="button"
+                                                    name="montantType"
+                                                    // value="autre"
+                                                    onClick={() => {
+                                                        setIsMontant1000Selected(false);
+                                                        setIsAutreMontantSelected(true);
+                                                        setIsMontantInputVisible(true); // Affichez toujours l'input "Entrez un montant"
+                                                        setMontantSaisi('');
+                                                    }}
+                                                />
+                                                Autre montant
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    {!isMontant1000Selected && isAutreMontantSelected && isMontantInputVisible && (
+                                        <div className="mb-3 d-flex align-items-center">
+                                            <input
+                                                required
+                                                type="number"
+                                                className="form-control"
+                                                name="text"
+                                                id="text"
+                                                placeholder="Entrez un montant"
+                                                value={montantSaisi}
+                                                onChange={(e) => setMontantSaisi(e.target.value)}
+                                            />
+                                            <span style={{ height: "52px", background: "#1d5d1d", color: "white" }} className="input-group-text addon-dollar mb-4">CFA</span>
+                                        </div>
+                                    )}
+
 
                                 </div>
                                 <div className="row">
@@ -244,7 +259,7 @@ const Donate = (props) => {
 
                                             // alert('Veuillez saisir le montant avant de continuer.');
                                         }
-                                    }} type="submit" className="theme-btn submit-btn">Faire le don</button>
+                                    }} type="submit" className="theme-btn submit-btn">Payez le don</button>
                                 </div>
                             </form>
                         </div>

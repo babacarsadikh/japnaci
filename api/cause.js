@@ -1,6 +1,6 @@
-import cimg1 from '/public/images/cause/img-1.png'
-import cimg2 from '/public/images/cause/img-2.jpg'
-import cimg3 from '/public/images/cause/img-3.jpg'
+import cimg1 from '/public/images/cause/talibe.jpg'
+import cimg2 from '/public/images/cause/ecole.jpeg'
+import cimg3 from '/public/images/cause/puit.jpg'
 import cimg4 from '/public/images/cause/img-4.jpg'
 import cimg5 from '/public/images/cause/img-5.jpg'
 import cimg6 from '/public/images/cause/img-6.jpg'
@@ -41,24 +41,14 @@ const Causes = [
         cImg:cimg3,
         cImgSingle:cimgSingle3,
         process:'85',
-        cTitle: 'Send Child to School for a Year', 
+        cTitle: 'Construction de puits  ', 
         slug:'Send-Child-to-School-for-a-Year',
         Goal:'3,000',
         Raised:'2,000',
         authorName:'Laura Faiary',
     },
 
-    {
-        id: '6',
-        cImg:cimg6,
-        cImgSingle:cimgSingle6,
-        process:'35',
-        cTitle: 'Recyclage pour la charité', 
-        slug:'Recycling-For-Charity',
-        Goal:'3,000',
-        Raised:'2,000',
-        authorName:'Laura Faiary',
-    }
+   
 ]
 
 export default Causes;
