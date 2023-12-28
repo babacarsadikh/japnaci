@@ -142,7 +142,7 @@ const ActionSolidaire = (props) => {
                                     <p>La cause sélectionnée n'a pas été trouvée.</p>
                                 )}
 
-                                <p style={{ color: 'black', }} className='mt-3'>Le don en nature représente une forme tangible de générosité, vous offrant la possibilité de contribuer avec des produits dès qu'ils sont consommables et utilisables.</p>
+                                <p style={{ color: 'black', }} className='mt-3'>Description de l'action ...Description de l'action ...Description de l'action ...Description de l'action ...Description de l'action ...Description de l'action ...</p>
 
 
                                 <button  className="theme-btn">Je participe</button>
