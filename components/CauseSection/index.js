@@ -6,7 +6,7 @@ import Image from 'next/image'
 const CauseSection = (props) => {
     const ClickHandler = (cause) => {
         window.scrollTo(10, 0);
-        window.location.href = `/donate?causeId=${cause.id}`;
+        window.location.href = `/actionsolidaire?causeId=${cause.id}`;
 
     }
     return (
@@ -29,7 +29,7 @@ const CauseSection = (props) => {
                                     <div className="cause-img">
                                         <Image src={Cause.cImg} alt="" />
                                         <div className="case-btn">
-                                            <button onClick={() => ClickHandler(Cause)} href="/donate" className="theme-btn">faire un geste<i className="fa fa-angle-double-right" aria-hidden="true"></i></button>
+                                            <button onClick={() => ClickHandler(Cause)} className="theme-btn">faire un geste<i className="fa fa-angle-double-right" aria-hidden="true"></i></button>
                                         </div>
                                     </div>
                                 </div>

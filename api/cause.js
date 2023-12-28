@@ -22,7 +22,7 @@ const Causes = [
         cTitle: 'Aide financière pour les familles défavorisées', 
         slug:'Financial-Help-for-Poor-Families',
         Goal:'300000',
-        Raised:'2000',
+        Raised:'90000',
         authorName:'Laura Faiary',
     },
     {
@@ -33,7 +33,7 @@ const Causes = [
         cTitle: 'Éducation pour les enfants défavorisés', 
         slug:'Education-for-Poor-Children',
         Goal:'2000000',
-        Raised:'2,000',
+        Raised:'900000',
         authorName:'Laura Faiary',
     },
     {
