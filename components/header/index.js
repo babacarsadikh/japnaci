@@ -31,7 +31,7 @@ const Header = (props) => {
                               
                                 </li>
                                 {/* <li><Link href="/about" title="">A propos de l'association</Link></li> */}
-                                <li><Link href="/case" title="">Campagnes</Link></li>
+                                <li><Link href="/case" title="">Nos actions</Link></li>
 
                               
                                 {/* <li><Link href="/donate" title="">Faire un Don</Link></li> */}

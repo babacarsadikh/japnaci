@@ -30,7 +30,7 @@ const HomePage = () => {
             {/* <BlogSection/> */}
             <Partner />
             <Footer />
-            <Scrollbar />
+            {/* <Scrollbar /> */}
         </Fragment>
     )
 };

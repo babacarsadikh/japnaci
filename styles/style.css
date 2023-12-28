@@ -111,13 +111,13 @@ img {
 
 @media (max-width: 991px) {
   .section-padding {
-    padding: 100px 0;
+    padding: 48px 0;
   }
 }
 
 @media (max-width: 767px) {
   .section-padding {
-    padding: 60px 0;
+    padding: 14px 0;
   }
 }
 
@@ -3195,7 +3195,7 @@ header.fixed .header-content {
   }
 
   .section-padding {
-    padding: 60px 0;
+    padding: 13px 0;
   }
 
   .testimonials-section {
@@ -4567,9 +4567,10 @@ header.fixed .header-content {
 .tp-donations-details,
 .tp-doanation-payment {
   padding: 30px;
-  margin-bottom: 40px;
-  box-shadow: 0px 1px 40px 0px rgba(40, 63, 116, 0.1);
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 70px 0px rgba(29, 93, 29, 0.1);
 }
+
 
 .tp-donations-amount h2,
 .tp-donations-details h2,

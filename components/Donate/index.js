@@ -99,34 +99,29 @@ const Donate = (props) => {
         background-color: transparent;
     }
 `}</style>
+
             <div className="container">
                 <div className="row">
                     <div className="col-lg-8 offset-lg-2">
-                        {selectedCause && (
-                            <div>
-                                {/* <h2>Informations de la campagne sélectionnée :</h2>
-                                <p>But : {selectedCause.Goal} CFA</p>
-                                <p>Recueillis : {selectedCause.Raised} CFA</p> */}
-                                <div className="tp-donate-header">
-                                    <h2 style={{ color: "#1d5d1d" }}>FAIRE UN DON</h2>
-                                    <h3>CAMPAGNES : {selectedCause.cTitle}</h3>
-                                </div>
-                                {/* ... Affichez d'autres informations de la campagne */}
+
+                        <div className="tp-doanation-payment" style={{ textAlign: 'center', background: '#1d5d1d' }}>
+                            <div><h1 style={{color:'white'}}>FAIRE UN DON FINANCIER</h1></div>
+                            <div style={{ display: 'flex', justifyContent: 'center' ,marginTop: '-0%' }}>
+                                 <span style={{ cursor: 'pointer', marginRight: '20px',color:'white' , textDecoration: 'underline' }}>Cliquez pour faire un don en nature.</span>
+                                 <span style={{ cursor: 'pointer' ,color:'white', textDecoration: 'underline' }}>Cliquez pour Sponsoriser une Action Solidaire.</span>
                             </div>
-
-                        )}
-
+                        </div>
 
 
                         <div id="Donations">
                             <form onSubmit={SubmitHandler} action="#">
-                                <div className="tp-donations-amount">
+                                <div className="tp-donations-amount" >
                                     <h2>Choisissez  votre donation</h2>
                                     <div className="d-flex justify-content-center align-items-center flex-row">
                                         <div className="mb-3">
                                             <label className={`custom-radio-label ${isMontant1000Selected ? 'active' : ''} text-center`}
-                                                    style={{ alignItems: 'center', justifyContent: 'center' }}
-                                                    >
+                                                style={{ alignItems: 'center', justifyContent: 'center' }}
+                                            >
                                                 <input
                                                     className="form-control no-border"
                                                     type="button"
