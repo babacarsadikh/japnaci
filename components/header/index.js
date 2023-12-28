@@ -13,15 +13,20 @@ const Header = (props) => {
      }
 
     return(	
+        
 	<div className="middle-header">
+       
+       
+
         <HeaderTopbar tpClass={props.tpClass}/>
         <div className="header-style-3">
             <div className="container">
                 <div className="header-content">
                 <div className="row">
                     <div className="col-lg-3 col-md-4 col-sm-4 col-4">
+                   
                         <div className="logo">
-                            <Link href="/" title="" > <p style={{color: "#1d5d1d",fontFamily: 'Buddy Champion', fontSize:"30px"}}>JAPNACI</p> </Link>
+                            <Link className="logobi" href="/" title="" > <p style={{color: "#1d5d1d",fontFamily: 'Buddy Champion', fontSize:"30px"}}>JAPNACI</p> </Link>
                         </div>
                     </div>
                     <div className="col-lg-8 d-lg-block d-none">

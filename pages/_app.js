@@ -20,6 +20,8 @@ function MyApp({ Component, pageProps }) {
     <div>
       <Head>
         <title>JAPNACI</title>
+        <link href="https://db.onlinewebfonts.com/c/fa30bb8e68abc85645bb4385e02d0e24?family=Buddy+Champion" rel="stylesheet" />
+
       </Head>
       <Component {...pageProps} />
       <ToastContainer />
