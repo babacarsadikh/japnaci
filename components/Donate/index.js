@@ -11,6 +11,7 @@ import Causes from '../../api/cause'
 import { PhoneInput } from 'react-international-phone';
 import "react-international-phone/style.css";
 import { useRouter } from 'next/router';
+import { FaHandHoldingHeart } from 'react-icons/fa';  // Importer une icône de don (par exemple, celle-ci est de FontAwesome)
 
 
 
@@ -63,7 +64,10 @@ const Donate = (props) => {
 
     const { causeId } = router.query; // Récupérez le paramètre 'causeId' de l'URL
     const selectedCause = Causes.find((cause) => cause.id === causeId);
-
+    const handleDonNatureClick = () => {
+        // Rediriger vers la page donateNature
+        router.push('/donateNature');
+    };
 
     useEffect(() => {
         const script = document.createElement('script');
@@ -104,13 +108,21 @@ const Donate = (props) => {
                 <div className="row">
                     <div className="col-lg-8 offset-lg-2">
 
-                        <div className="tp-doanation-payment" style={{ textAlign: 'center', background: '#1d5d1d' }}>
-                            <div><h1 style={{color:'white'}}>FAIRE UN DON FINANCIER</h1></div>
-                            <div style={{ display: 'flex', justifyContent: 'center' ,marginTop: '-0%' }}>
-                                 <span style={{ cursor: 'pointer', marginRight: '20px',color:'white' , textDecoration: 'underline' }}>Cliquez pour faire un don en nature.</span>
-                                 <span style={{ cursor: 'pointer' ,color:'white', textDecoration: 'underline' }}>Cliquez pour Sponsoriser une Action Solidaire.</span>
-                            </div>
-                        </div>
+                    <div className="tp-doanation-payment" style={{ textAlign: 'center', background: '#1d5d1d', position: 'relative' }}>
+
+            <div style={{ zIndex: 1, position: 'relative' }}>
+                <h1 style={{ color: 'white' }}>FAIRE UN DON FINANCIER</h1>
+                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-0%' }}>
+                    <span onClick={handleDonNatureClick} style={{ cursor: 'pointer', marginRight: '20px', color: 'white', textDecoration: 'underline' }}>Cliquez pour faire un don en nature.</span>
+                    <span style={{ cursor: 'pointer', color: 'white', textDecoration: 'underline' }}>Cliquez pour Sponsoriser une Action Solidaire.</span>
+                </div>
+            </div>
+
+            {/* Ajouter une icône de don */}
+            <div style={{ position: 'absolute', top: -10, left: -26, zIndex: 2, color: '#1d5d1d', borderRadius: '50%', background: 'white', padding: '25px' }}>
+                <FaHandHoldingHeart size={30} />
+            </div>
+        </div>
 
 
                         <div id="Donations">

@@ -11,7 +11,7 @@ import Testimonial from '../../components/Testimonial'
 import BlogSection from '../../components/BlogSection'
 import Partner from '../../components/Partner'
 import Footer from '../../components/footer'
-
+import DonateButton from '../../components/DonateButton/DonateButton';
 import Scrollbar from '../../components/scrollbar'
 
 
@@ -21,7 +21,7 @@ const HomePage = () => {
               <Navbar />
             <Hero />
             {/* <About /> */}
-            {/* <Features /> */}
+            <Features />
             <Causes />
             <CtaSection />
             {/* <EventSection />
@@ -30,6 +30,7 @@ const HomePage = () => {
             {/* <BlogSection/> */}
             <Partner />
             <Footer />
+            <DonateButton/>
             {/* <Scrollbar /> */}
         </Fragment>
     )

@@ -61,19 +61,19 @@ const LoginPage = (props) => {
     return (
         <Grid className="loginWrapper">
             <Grid className="loginForm">
-                <h2>Se connecter</h2>
-                <p>Connectez-vous à votre compte</p>
+                <h2 style={{color:"#1d5d1d",fontFamily: 'Buddy Champion',fontSize:"50px"}}>JAPNACI</h2>
+                <p style={{color:"black",fontSize:"14px"}}>Pour vous connecter, veuillez saisir votre adresse email et votre mot de passe.</p>
                 <form onSubmit={submitForm}>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
                             <TextField
                                 className="inputOutline"
                                 fullWidth
-                                placeholder="E-mail"
+                                placeholder="Email"
                                 value={value.email}
                                 variant="outlined"
                                 name="email"
-                                label="E-mail"
+                                label="Email"
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
@@ -86,12 +86,12 @@ const LoginPage = (props) => {
                             <TextField
                                 className="inputOutline"
                                 fullWidth
-                                placeholder="Password"
+                                placeholder="Mot de passe"
                                 value={value.password}
                                 variant="outlined"
                                 name="password"
                                 type="password"
-                                label="Mot de pass"
+                                label="Mot de passe"
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
@@ -109,10 +109,10 @@ const LoginPage = (props) => {
                                 <Link href="/forgot-password">Forgot Password?</Link>
                             </Grid> */}
                             <Grid className="formFooter">
-                                <Button fullWidth className="cBtnTheme" type="submit">Se connecter</Button>
+                                <Button fullWidth className="cBtnTheme" type="submit" style={{backgroundColor:"#1d5d1d",fontSize:"15px"}}>Se connecter</Button>
                             </Grid>
                           
-                            <p className="noteHelp">Vous n'avez pas de compte ? <Link href="/register">Créer un compte </Link>
+                            <p className="noteHelp" >Vous n'avez pas de compte ? <Link href="/register" style={{color:"#1d5d1d",fontSize:"15px"}}>Créer un compte </Link>
                             </p>
                         </Grid>
                     </Grid>

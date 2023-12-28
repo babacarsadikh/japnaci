@@ -12,15 +12,16 @@ const CauseSection = (props) => {
     return (
         <div className="case-area section-padding">
             <div className="container">
-                <div className="col-lg-6 offset-lg-3">
-                    <div className="section-title section-title2 text-center">
-                        <div className="thumb-text">
-                            <span>CAMPAGNES</span>
+                <div className="">
+                <div className="tp-doanation-payment" style={{ textAlign: 'center', background: '#1d5d1d' }}>
+                            <div><h1 style={{color:'white'}}>ACTIONS SOLIDAIRES</h1></div>
+                            {/* <div style={{ display: 'flex', justifyContent: 'center' ,marginTop: '-0%' }}>
+                                 <span style={{ cursor: 'pointer', marginRight: '20px',color:'white' , textDecoration: 'underline' }}>Cliquez pour faire un don en nature.</span>
+                                 <span style={{ cursor: 'pointer' ,color:'white', textDecoration: 'underline' }}>Cliquez pour Sponsoriser une Action Solidaire.</span>
+                            </div> */}
                         </div>
-                        <h2>Dernières campagnes</h2>
-                    </div>
                 </div>
-                <div className="row">
+                <div className="row" style={{marginBottom: "5%"}}>
                     {Causes.slice(0, 6).map((Cause, citem) => (
                         <div className="col-lg-4 col-md-6 col-12" key={citem}>
                             <div className="cause-item">

@@ -49,8 +49,8 @@ const SignUpPage = (props) => {
         <Grid className="loginWrapper">
 
             <Grid className="loginForm">
-                <h2>S'inscrire</h2>
-                <p></p>
+            <h2 style={{color:"#1d5d1d",fontFamily: 'Buddy Champion',fontSize:"50px"}}>JAPNACI</h2>
+                <p>Pour vous inscrire, saisissez votre adresse email et votre nom complet.</p>
                 <form onSubmit={submitForm}>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
@@ -130,7 +130,7 @@ const SignUpPage = (props) => {
                                 <Button className="twitter"><i className="fa fa-twitter"></i></Button>
                                 <Button className="linkedin"><i className="fa fa-linkedin"></i></Button>
                             </Grid> */}
-                            <p className="noteHelp">Vous avez déjà un compte? <Link href="/login">Revenir à la connexion</Link>
+                            <p className="noteHelp">Vous avez déjà un compte? <Link href="/login" style={{color:"#1d5d1d",fontSize:"15px"}}>Revenir à la connexion</Link>
                             </p>
                         </Grid>
                     </Grid>

@@ -106,7 +106,7 @@ img {
 }
 
 .section-padding {
-  padding: 110px 0;
+  padding: 45px 0;
 }
 
 @media (max-width: 991px) {
@@ -594,7 +594,7 @@ ul.smothscroll a:hover {
 }
 
 .cBtnTheme {
-  background-color: #18b760!important;
+  background-color: #1d5d1d!important;
   color: #fff!important;
 }
 

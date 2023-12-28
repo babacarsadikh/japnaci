@@ -21,7 +21,7 @@ const Header = (props) => {
                 <div className="row">
                     <div className="col-lg-3 col-md-4 col-sm-4 col-4">
                         <div className="logo">
-                            <Link href="/home" title=""> <p>JAPNACI </p> </Link>
+                            <Link href="/" title="" > <p style={{color: "#1d5d1d",fontFamily: 'Buddy Champion', fontSize:"30px"}}>JAPNACI</p> </Link>
                         </div>
                     </div>
                     <div className="col-lg-8 d-lg-block d-none">
@@ -31,7 +31,7 @@ const Header = (props) => {
                               
                                 </li>
                                 {/* <li><Link href="/about" title="">A propos de l'association</Link></li> */}
-                                <li><Link href="/case" title="">Nos actions</Link></li>
+                                <li><Link href="/case" title="">Actions Solidaires</Link></li>
 
                               
                                 {/* <li><Link href="/donate" title="">Faire un Don</Link></li> */}
