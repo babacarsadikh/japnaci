@@ -112,7 +112,7 @@ const DonateNature = (props) => {
                             <div><h1 style={{color:'white'}}>FAIRE UN DON EN NATURE</h1></div>
                             <div style={{ display: 'flex', justifyContent: 'center' ,marginTop: '-0%' }}>
                                  <span onClick={handleDonNatureClick} style={{ cursor: 'pointer', marginRight: '20px',color:'white' , textDecoration: 'underline' }}>Cliquez pour faire un don financier.</span>
-                                 <span style={{ cursor: 'pointer' ,color:'white', textDecoration: 'underline' }}>Cliquez pour Sponsoriser une Action Solidaire.</span>
+                                 {/* <span style={{ cursor: 'pointer' ,color:'white', textDecoration: 'underline' }}>Cliquez pour Sponsoriser une Action Solidaire.</span> */}
                             </div>
                              {/* Ajouter une icône de don */}
             <div style={{ position: 'absolute', top: -10, left: -26, zIndex: 2, color: '#1d5d1d', borderRadius: '50%', background: 'white', padding: '25px' }}>

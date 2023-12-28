@@ -13,6 +13,7 @@ import "react-international-phone/style.css";
 import { useRouter } from 'next/router';
 import { FaBox } from 'react-icons/fa';
 import { IoMdGift } from 'react-icons/io';
+import { FaHandHoldingUsd, FaLeaf } from 'react-icons/fa';
 
 
 
@@ -73,7 +74,7 @@ const ActionSolidaire = (props) => {
 
     const handleDonNatureClick = () => {
         // Rediriger vers la page donateNature
-        router.push('/donate');
+        router.push('/donateNature');
     };
 
     useEffect(() => {
@@ -95,14 +96,14 @@ const ActionSolidaire = (props) => {
                     <div className="col-lg-8 offset-lg-2">
 
                         <div className="tp-doanation-payment" style={{ textAlign: 'center', background: '#1d5d1d', position: 'relative' }}>
-                        {selectedCause ? (
-                                    <div>
-                                     <h2 style={{ color: 'white',    marginTop: "43px"}}>{selectedCause.cTitle}</h2>
+                            {selectedCause ? (
+                                <div>
+                                    <h2 style={{ color: 'white', marginTop: "43px" }}>{selectedCause.cTitle}</h2>
 
-                                    </div>
-                                ) : (
-                                    <p>La cause sélectionnée n'a pas été trouvée.</p>
-                                )}
+                                </div>
+                            ) : (
+                                <p>La cause sélectionnée n'a pas été trouvée.</p>
+                            )}
                             {/* <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-0%' }}>
                                 <span onClick={handleDonNatureClick} style={{ cursor: 'pointer', marginRight: '20px', color: 'white', textDecoration: 'underline' }}>Cliquez pour faire un don financier.</span>
                                 <span style={{ cursor: 'pointer', color: 'white', textDecoration: 'underline' }}>Cliquez pour Sponsoriser une Action Solidaire.</span>
@@ -145,7 +146,13 @@ const ActionSolidaire = (props) => {
                                 <p style={{ color: 'black', }} className='mt-3'>Description de l'action ...Description de l'action ...Description de l'action ...Description de l'action ...Description de l'action ...Description de l'action ...</p>
 
 
-                                <button  className="theme-btn">Je participe</button>
+                                <button className="theme-btn" >
+                                    Je participe en argent <FaHandHoldingUsd />
+                                </button>
+                                <button style={{ marginLeft: 10 }} className="theme-btn" onClick={() => handleDonNatureClick()}>
+                                    Je participe en nature  <FaLeaf />
+                                </button>
+
 
 
                             </div>
