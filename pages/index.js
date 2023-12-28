@@ -21,7 +21,7 @@ const HomePage = () => {
             <Navbar />
             <Hero />
             {/* <About /> */}
-            <Features />
+            {/* <Features /> */}
             <Causes />
             <CtaSection />
            
