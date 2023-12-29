@@ -14,7 +14,7 @@ const CauseSection = (props) => {
             <div className="container">
                 <div className="" style={{ textAlign: 'center' }}>
                     <div>
-                        <i className="fas fa-heart" style={{ color: '#1d5d1d', fontSize: '3em' }}></i>
+                        <i className="fas fa-heart" style={{ color: '#1d5d1d', fontSize: '2em' }}></i>
                         <h1 style={{ color: '#1d5d1d', display: 'inline-block', marginLeft: '0.5em' }}>ACTIONS SOCIALES</h1>
                     </div>
                 </div>

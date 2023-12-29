@@ -27,7 +27,7 @@ const HomePage = () => {
             {/* <EventSection />
             <TeamSection /> */}
             {/* <Testimonial /> */}
-            {/* <BlogSection/> */}
+            <BlogSection/>
             <Partner />
             <Footer />
             <DonateButton/>

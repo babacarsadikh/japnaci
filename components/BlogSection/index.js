@@ -2,7 +2,8 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import blogs from '../../api/blogs'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 const BlogSection = (props) => {
 
     const ClickHandler = () => {
@@ -14,11 +15,11 @@ const BlogSection = (props) => {
                 <div className="row">
                     <div className="col-lg-6 offset-lg-3">
                         <div className="section-title section-title2 text-center">
-                            <div className="thumb-text">
-                                <span>Blog</span>
-                            </div>
-                            <h2>Our Latest News</h2>
-                            <p>It is a long established fact that reader distracted by the the readable content off page looking at its layout point.</p>
+                            
+                        <div>
+        <FontAwesomeIcon icon={faNewspaper} style={{ color: '#1d5d1d', fontSize: '2em' }} />
+        <h1 style={{ color: '#1d5d1d', display: 'inline-block', marginLeft: '0.5em' }}>NOS ACTUS</h1>
+      </div>                      
                         </div>
                     </div>
                 </div>
@@ -36,7 +37,7 @@ const BlogSection = (props) => {
                                             <li><i className="fa fa-heart" aria-hidden="true"></i>56</li>
                                             <li><i className="fa fa-comments-o" aria-hidden="true"></i> 78</li>
                                         </ul>
-                                        <h2><Link onClick={ClickHandler} href='/blog-single/[slug]' as={`/blog-single/${blog.slug}`}>{blog.title}</Link></h2>
+                                        <h2><Link onClick={ClickHandler} href='/' as={`/blog-single/${blog.slug}`}>{blog.title}</Link></h2>
                                     </div>
                                 </div>
                             </div>

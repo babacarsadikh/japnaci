@@ -24,13 +24,11 @@ const About = (props) => {
                     <div className="col-lg-6 offset-lg-1 grid  col-md-12 col-12">
                         <div className="about-text">
                             <div className="section-title">
-                                <div className="thumb-text">
-                                    <span>ABOUT US</span>
-                                </div>
-                                <h2>Khairah is <span>Nonprofit</span> Organization <span>For Help</span> Children.</h2>
+                            <h1 style={{ color: '#1d5d1d', display: 'inline-block', marginLeft: '0.5em' }}>A PROPOS DE JAPNACI</h1>
+                                {/* <h2>Khairah is <span>Nonprofit</span> Organization <span>For Help</span> Children.</h2> */}
                             </div>
-                            <p>It is a long established fact that a reader will be distracted by thethe readable content off a page when looking at its layout point using Lorem Ipsum is that it has.</p>
-                            <div className="ab-icon-area">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            {/* <div className="ab-icon-area">
                                 <div className="about-icon-wrap">
                                     <div className="about-icon-item">
                                         <div className="ab-icon">
@@ -49,14 +47,14 @@ const About = (props) => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="ab-shape">
+            {/* <div className="ab-shape">
                  <Image src={abimg4} alt="" />
-            </div>
+            </div> */}
         </div>
     )
 }
