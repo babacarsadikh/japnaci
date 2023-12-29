@@ -26,7 +26,10 @@ const CauseSection = (props) => {
                                     <div className="cause-img">
                                         <Image src={Cause.cImg} alt="" />
                                         <div className="case-btn">
-                                            <button onClick={() => ClickHandler(Cause)} className="theme-btn">faire un geste<i className="fa fa-angle-double-right" aria-hidden="true"></i></button>
+                                            <button onClick={() => ClickHandler(Cause)} className="theme-btn">
+                                            <span style={{ display: 'inline-block' }}>faire un geste</span>
+
+                                                <i className="fa fa-angle-double-right" aria-hidden="true"></i></button>
                                         </div>
                                     </div>
                                 </div>

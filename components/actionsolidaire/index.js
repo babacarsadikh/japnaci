@@ -163,12 +163,14 @@ const ActionSolidaire = (props) => {
                                         defaultCountry="sn"
                                         value={phone}
                                         onChange={(value) => setPhone(value)}
-                                        className="form-control no-border"
+                                        className="form-control no-border mr-5"
 
                                     />
                                 </label>
+                                
                                 <label>
                                     Montant:
+                                    <div className=' d-flex align-items-center'>
                                     <input
                                         type="number"
                                         value={montantSaisi}
@@ -176,6 +178,11 @@ const ActionSolidaire = (props) => {
                                         className="form-control no-border"
 
                                     />
+                                                        
+                                    <span style={{ height: "47px", background: "#1d5d1d", color: "white" }} className="input-group-text addon-dollar ">CFA</span>
+
+                                    </div>
+                                  
                                 </label>
                                 <div style={{ marginTop: '20px' }}>
                                     <button style={{ marginRight: '10px' }} type="button" className="theme-btn" onClick={() => setIsModalOpen(false)}>

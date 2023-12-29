@@ -1881,7 +1881,7 @@ background-repeat: no-repeat;
 }
 
 .section-title h2 span:last-child {
-  color: #03b664;
+  color: #1d5d1d;
 }
 
 .about-icon-wrap {
@@ -2054,7 +2054,7 @@ background-repeat: no-repeat;
 .video-btn .wrap .fi:before {
   font-size: 50px;
   font-size: 3.125rem;
-  color: #03b664;
+  color: #1d5d1d;
 }
 
 
@@ -2313,12 +2313,13 @@ background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   margin-top: -10px;
+  width: 100%;
 }
 
 .cause-text ul li a {
-  padding: 10px 20px;
-  background: #03b664;
-  margin-right: 15px;
+  padding: 10px 10px;
+  background: #1d5d1d;
+  margin-right: 0px;
   border-radius: 30px;
   color: #fff;
   font-weight: 600;
@@ -2345,7 +2346,7 @@ background-repeat: no-repeat;
 }
 
 .cause-text h3 a:hover {
-  color: #03b664;
+  color: #1d5d1d;
 }
 
 .cause-item:before {
@@ -2454,6 +2455,7 @@ background-repeat: no-repeat;
   opacity: 0;
   visibility: hidden;
   transition: all .6s;
+  width: 100%;
 }
 
 .cause-item:hover .case-btn {
@@ -2589,7 +2591,7 @@ background-repeat: no-repeat;
 
 .cta-call:last-child h3 {
   font-size: 40px;
-  color: #03b664;
+  color: #1d5d1d;
 }
 
 @media(max-width: 1200px) {
@@ -2731,7 +2733,7 @@ background-repeat: no-repeat;
 
 .event-right ul li:first-child {
   margin-right: 30px;
-  color: #03b664;
+  color: #1d5d1d;
 }
 
 .event-right ul li:last-child {
@@ -2751,7 +2753,7 @@ background-repeat: no-repeat;
 
 .event-l-text {
   padding: 30px;
-  background: #03b664;
+  background: #1d5d1d;
   text-align: center;
   min-height: 200px;
   display: flex;
@@ -3097,7 +3099,7 @@ background-repeat: no-repeat;
   font-size: 13px;
   font-size: 0.86667rem;
   margin: 0;
-  color: #03b664;
+  color: #1d5d1d;
 }
 
 .testimonials-section .testimonial-thumb-active button i {
