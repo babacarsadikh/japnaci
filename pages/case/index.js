@@ -4,6 +4,7 @@ import PageTitle from '../../components/pagetitle'
 import CauseSection from '../../components/CauseSection';
 import Footer from '../../components/footer'
 import Scrollbar from '../../components/scrollbar'
+import DonateButton from '../../components/DonateButton/DonateButton';
 
 
 const CausePage =() => {
@@ -14,6 +15,7 @@ const CausePage =() => {
             <CauseSection/>
             <Footer/>
             <Scrollbar/>
+            <DonateButton/>
         </Fragment>
     )
 };
