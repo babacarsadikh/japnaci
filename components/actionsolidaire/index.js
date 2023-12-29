@@ -208,12 +208,14 @@ const ActionSolidaire = (props) => {
                                                 {percentageRaised.toFixed(2)}%
                                             </div>
                                         </div>
+                                        <p style={{ color: 'black', }} className='mt-3'> Description : {selectedCause.description}</p>
+
                                     </div>
+                                    
                                 ) : (
                                     <p>La cause sélectionnée n'a pas été trouvée.</p>
                                 )}
 
-                                <p style={{ color: 'black', }} className='mt-3'>Description de l'action ...Description de l'action ...Description de l'action ...Description de l'action ...Description de l'action ...Description de l'action ...</p>
 
 
                                 <button className="theme-btn" onClick={openModal}>
