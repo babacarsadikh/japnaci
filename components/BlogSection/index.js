@@ -17,7 +17,7 @@ const BlogSection = (props) => {
                         <div className="section-title section-title2 text-center">
                             
                         <div>
-        <FontAwesomeIcon icon={faNewspaper} style={{ color: '#1d5d1d', fontSize: '2em' }} />
+        {/* <FontAwesomeIcon icon={faNewspaper} style={{ color: '#1d5d1d', fontSize: '2em' }} /> */}
         <h1 style={{ color: '#1d5d1d', display: 'inline-block', marginLeft: '0.5em' }}>NOS ACTUS</h1>
       </div>                      
                         </div>
