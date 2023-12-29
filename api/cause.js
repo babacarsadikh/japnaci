@@ -19,7 +19,7 @@ const Causes = [
         cImg:cimg1,
         cImgSingle:cimgSingle1,
         process:'65',
-        cTitle: 'Aide financière pour les familles défavorisées', 
+        cTitle: 'Aides aux populations défavorisées  ', 
         slug:'Financial-Help-for-Poor-Families',
         Goal:'300000',
         Raised:'90000',
@@ -46,8 +46,8 @@ const Causes = [
         process:'85',
         cTitle: 'Construction de puits  ', 
         slug:'Send-Child-to-School-for-a-Year',
-        Goal:'3,000',
-        Raised:'2,000',
+        Goal:'1000000',
+        Raised:'200000',
         authorName:'Laura Faiary',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 

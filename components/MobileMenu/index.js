@@ -15,7 +15,7 @@ const menus = [
    
     {
         id: 31,
-        title: 'Actions Solidaires',
+        title: 'Actions sociales ',
         link: '/case'
     },
 

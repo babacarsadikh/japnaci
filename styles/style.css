@@ -3700,7 +3700,6 @@ background-repeat: no-repeat;
 
 .sticky-header {
   width: 100%;
-  position: fixed;
   left: 0;
   top: -200px;
   z-index: 9999;

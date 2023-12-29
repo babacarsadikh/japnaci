@@ -9,7 +9,7 @@ const Footer = (props) => {
   };
 
   return (
-    <footer className="tp-site-footer" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <footer className="tp-site-footer" style={{ position: 'fixed', bottom: 0, width: '100%', backgroundColor: '#f8f8f8', textAlign: 'center' }}>
       {/* <div className="tp-upper-footer">
         <div className="container">
           <div className="row">

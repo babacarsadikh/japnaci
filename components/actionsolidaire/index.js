@@ -20,30 +20,7 @@ import Modal from 'react-modal';
 
 
 const ActionSolidaire = (props) => {
-    function getParams() {
-        const phoneNumberWithoutCountryCode = phone ? phone.replace(/^(\+\d{1,3}\s?)?/, '') : '';
 
-        var randomDigits = Math.floor(Math.random() * 1000000000);
-        const paddedRandomNumber = randomDigits.toString().padStart(7, '0');
-        const randomRef = 'DKI' + paddedRandomNumber;
-        var succeslink = 'https://dkrinfos.com/reussi.php';
-        var failedlink = 'https://japnaci.vercel.app/404';
-        var ref = randomRef;
-        // var samamontant = montant
-        var samamontant =  montantSaisi; // Utilise 1000 CFA si le bouton radio "Montant de base (1000 CFA)" est sélectionné, sinon utilise la valeur saisie
-        if (!samamontant) {
-            alert("Veuillez renseigner le montant avant de continuer.");
-            return;
-        }
-
-        console.log(samamontant);
-        sendPaymentInfos(ref,
-            'DAKIN14898', 'iDnrqZwm252SnwDuQvtHSIVxUgpmFXLzfLONQOOkH51ylgmlNw',
-            'dkrinformatique.sn', succeslink,
-            failedlink, samamontant,
-            'Dakar', mail, '', '', phoneNumberWithoutCountryCode);
-
-    }
 
     const [phone, setPhone] = useState("");
 
@@ -71,6 +48,32 @@ const ActionSolidaire = (props) => {
         setSelectedCountry(event.target.value);
     };
     const router = useRouter();
+    function getParams() {
+        const phoneNumberWithoutCountryCode = phone ? phone.replace(/^(\+\d{1,3}\s?)?/, '') : '';
+
+        var randomDigits = Math.floor(Math.random() * 1000000000);
+        const paddedRandomNumber = randomDigits.toString().padStart(7, '0');
+        const randomRef = 'DKI' + paddedRandomNumber;
+        var succeslink = 'https://dkrinfos.com/reussi.php';
+        var failedlink = 'https://japnaci.vercel.app/404';
+        var ref = randomRef;
+        // var samamontant = montant
+        var samamontant =  montantSaisi; // Utilise 1000 CFA si le bouton radio "Montant de base (1000 CFA)" est sélectionné, sinon utilise la valeur saisie
+        if (!samamontant) {
+            alert("Veuillez renseigner le montant avant de continuer.");
+            return;
+        }
+
+        console.log(samamontant);
+        sendPaymentInfos(ref,
+            'DAKIN14898', 'iDnrqZwm252SnwDuQvtHSIVxUgpmFXLzfLONQOOkH51ylgmlNw',
+            'dkrinformatique.sn', succeslink,
+            failedlink, samamontant,
+            'Dakar', mail, '', '', phoneNumberWithoutCountryCode);
+
+             router.push('/PaymentWaitingPage');
+
+    }
 
     const { causeId } = router.query; // Récupérez le paramètre 'causeId' de l'URL
     // Trouver la cause correspondante en fonction de l'ID passé dans l'URL
@@ -95,7 +98,7 @@ const ActionSolidaire = (props) => {
 
 
     return (
-        <div className="tp-donation-page-area section-padding">
+        <div className="tp-donation-page-area section-padding" style={{ marginBottom: '25px' }}>
 
 
 
@@ -153,7 +156,7 @@ const ActionSolidaire = (props) => {
                             }}
                         >
                             <h2 style={{ color: "#1d5d1d", fontSize: "20px", textAlign: "center" }}>Saisir votre numéro de téléphone et un montant</h2>
-                            <form onSubmit={getParams}>
+                            
                                 <label>
                                     Numéro de téléphone:
                                     <PhoneInput
@@ -178,11 +181,11 @@ const ActionSolidaire = (props) => {
                                     <button style={{ marginRight: '10px' }} type="button" className="theme-btn" onClick={() => setIsModalOpen(false)}>
                                         Fermer
                                     </button>
-                                    <button type="submit" className="theme-btn">
+                                    <button className="theme-btn"  onClick={(e) => { getParams(); }}>
                                         Payer
                                     </button>
                                 </div>
-                            </form>
+                           
                         </Modal>
 
                         <div id="Donations">
@@ -218,12 +221,14 @@ const ActionSolidaire = (props) => {
 
 
 
+                                <div style={{ textAlign: 'center' }}>
                                 <button className="theme-btn" onClick={openModal}>
-                                    Je participe en argent <FaHandHoldingUsd />
+                                    Je participe <FaHandHoldingUsd  style={{ marginLeft:"10" }} />
                                 </button>
-                                <button style={{ marginLeft: 10 }} className="theme-btn" onClick={() => handleDonNatureClick()}>
+                                </div>
+                                {/* <button style={{ marginLeft: 10 }} className="theme-btn" onClick={() => handleDonNatureClick()}>
                                     Je participe en nature  <FaLeaf />
-                                </button>
+                                </button> */}
 
 
 
