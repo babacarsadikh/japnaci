@@ -14,7 +14,6 @@ import { useRouter } from 'next/router';
 import { FaHandHoldingHeart } from 'react-icons/fa';  // Importer une icône de don (par exemple, celle-ci est de FontAwesome)
 
 
-
 const Donate = (props) => {
     function getParams() {
         const phoneNumberWithoutCountryCode = phone ? phone.replace(/^(\+\d{1,3}\s?)?/, '') : '';

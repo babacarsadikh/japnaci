@@ -24,7 +24,7 @@ const Hero = () => {
         <section className="hero-slider hero-style-1">
             <Slider {...settings}>
                 <div className="slide">
-                    <div className="slide-inner" style={{ backgroundImage: `url(${'/images/slider/back1.jpg'})` }}>
+                    <div className="slide-inner" style={{ backgroundImage: `url(${'/images/slider/back2.jpg'})` }}>
                         <div className="container" style={{marginTop:'15%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
                            
                          

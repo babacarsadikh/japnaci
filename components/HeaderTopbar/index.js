@@ -17,9 +17,13 @@ const HeaderTopbar = (props) => {
                     <div className="col col-md-6 col-sm-12 col-12">
                         <div className="contact-info">
                             <ul>
-                                <li><Link href="/login">Se connecter</Link></li>
-                                <li><Link href="/register">S'inscrire</Link></li>
-                                <li><Link className="theme-btn" href="/donate">Faire un don maintenant</Link></li>
+                                <li>
+                                <i className="fas fa-sign-in-alt" style={{ marginRight: '5px',color: '#1d5d1d' }}></i> 
+                                    <Link  style={{ color: '#1d5d1d', display: 'inline',fontWeight:"bold" }} href="/login">Se connecter</Link></li>
+                                <li>
+                                <i className="fas fa-user-plus" style={{ marginRight: '5px' ,color: '#1d5d1d'}}></i> 
+                                    <Link  style={{ color: '#1d5d1d', display: 'inline',fontWeight:"bold" }}  href="/register">S'inscrire</Link></li>
+                                {/* <li><Link className="theme-btn" href="/donate">Faire un don maintenant</Link></li> */}
                             </ul>
                         </div>
                     </div>

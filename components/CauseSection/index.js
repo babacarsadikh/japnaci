@@ -13,13 +13,16 @@ const CauseSection = (props) => {
         <div className="case-area section-padding">
             <div className="container">
                 <div className="">
-                <div className="tp-doanation-payment" style={{ textAlign: 'center', background: '#1d5d1d' }}>
-                            <div><h1 style={{color:'white'}}>ACTIONS SOLIDAIRES</h1></div>
-                            {/* <div style={{ display: 'flex', justifyContent: 'center' ,marginTop: '-0%' }}>
-                                 <span style={{ cursor: 'pointer', marginRight: '20px',color:'white' , textDecoration: 'underline' }}>Cliquez pour faire un don en nature.</span>
-                                 <span style={{ cursor: 'pointer' ,color:'white', textDecoration: 'underline' }}>Cliquez pour Sponsoriser une Action Solidaire.</span>
-                            </div> */}
-                        </div>
+                {/* <div className="" style={{ textAlign: 'center' }}>
+                            <div><h1 style={{color:'#1d5d1d'}}>ACTIONS SOLIDAIRES</h1></div>
+                          
+                        </div> */}
+                         <div className="" style={{ textAlign: 'center' }}>
+            <div>
+                <i className="fas fa-heart" style={{ color: '#1d5d1d', fontSize: '3em' }}></i>
+                <h1 style={{ color: '#1d5d1d', display: 'inline-block', marginLeft: '0.5em' }}>ACTIONS SOLIDAIRES</h1>
+            </div>
+        </div>
                 </div>
                 <div className="row" style={{marginBottom: "5%"}}>
                     {Causes.slice(0, 6).map((Cause, citem) => (

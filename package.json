@@ -25,6 +25,7 @@
     "react-icons": "^4.12.0",
     "react-international-phone": "^4.0.4",
     "react-medium-image-zoom": "^4.3.4",
+    "react-modal": "^3.16.1",
     "react-modal-video": "^2.0.1",
     "react-owl-carousel": "^2.3.1",
     "react-photoswipe-gallery": "^2.2.2",

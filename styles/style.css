@@ -1583,6 +1583,12 @@ header.fixed .header-content {
 }
 
 @media (max-width: 767px) {
+  .hero-slider .slide-inner {
+ 
+    background-size: contain;
+background-repeat: no-repeat;
+
+  }
   .hero-slider {
     height: 600px;
   }

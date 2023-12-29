@@ -14,6 +14,7 @@ import { useRouter } from 'next/router';
 import { FaBox } from 'react-icons/fa';
 import { IoMdGift } from 'react-icons/io';
 import { FaHandHoldingUsd, FaLeaf } from 'react-icons/fa';
+import Modal from 'react-modal';
 
 
 
@@ -29,7 +30,7 @@ const ActionSolidaire = (props) => {
         var failedlink = 'https://japnaci.vercel.app/404';
         var ref = randomRef;
         // var samamontant = montant
-        var samamontant = isMontant1000Selected ? 1000 : montantSaisi; // Utilise 1000 CFA si le bouton radio "Montant de base (1000 CFA)" est sélectionné, sinon utilise la valeur saisie
+        var samamontant =  montantSaisi; // Utilise 1000 CFA si le bouton radio "Montant de base (1000 CFA)" est sélectionné, sinon utilise la valeur saisie
         if (!samamontant) {
             alert("Veuillez renseigner le montant avant de continuer.");
             return;
@@ -49,9 +50,15 @@ const ActionSolidaire = (props) => {
     const [mail, setMail] = useState('');
     const [montant, setMontant] = useState(1000); // Initialisez avec 1000 CFA par défaut
     const [montantSaisi, setMontantSaisi] = useState(''); // Pour gérer la saisie utilisateur
-    const [isMontant1000Selected, setIsMontant1000Selected] = useState(true); // Pour gérer la sélection du bouton radio
     const [isAutreMontantSelected, setIsAutreMontantSelected] = useState(false);
     const [isMontantInputVisible, setIsMontantInputVisible] = useState(true); // Ajout de cet état
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
 
     const SubmitHandler = (e) => {
@@ -91,6 +98,7 @@ const ActionSolidaire = (props) => {
         <div className="tp-donation-page-area section-padding">
 
 
+
             <div className="container">
                 <div className="row">
                     <div className="col-lg-8 offset-lg-2">
@@ -113,7 +121,69 @@ const ActionSolidaire = (props) => {
                                 <FaBox size={30} />
                             </div>
                         </div>
+                        <Modal
+                            isOpen={isModalOpen}
+                            onRequestClose={closeModal}
+                            contentLabel=""
+                            style={{
+                                overlay: {
+                                    zIndex: 1000,
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                                },
+                                content: {
+                                    position: 'relative',
+                                    top: 'auto',
+                                    left: 'auto',
+                                    right: 'auto',
+                                    bottom: 'auto',
+                                    border: '1px solid #ccc',
+                                    background: '#fff',
+                                    overflow: 'auto',
+                                    WebkitOverflowScrolling: 'touch',
+                                    borderRadius: '4px',
+                                    outline: 'none',
+                                    padding: '20px',
+                                    maxWidth: '400px',
+                                    textAlign: 'center',
+                                    margin: 'auto',
+                                },
+                            }}
+                        >
+                            <h2 style={{ color: "#1d5d1d", fontSize: "20px", textAlign: "center" }}>Saisir votre numéro de téléphone et un montant</h2>
+                            <form onSubmit={getParams}>
+                                <label>
+                                    Numéro de téléphone:
+                                    <PhoneInput
+                                        defaultCountry="sn"
+                                        value={phone}
+                                        onChange={(value) => setPhone(value)}
+                                        className="form-control no-border"
 
+                                    />
+                                </label>
+                                <label>
+                                    Montant:
+                                    <input
+                                        type="number"
+                                        value={montantSaisi}
+                                        onChange={(e) => setMontantSaisi(e.target.value)}
+                                        className="form-control no-border"
+
+                                    />
+                                </label>
+                                <div style={{ marginTop: '20px' }}>
+                                    <button style={{ marginRight: '10px' }} type="button" className="theme-btn" onClick={() => setIsModalOpen(false)}>
+                                        Fermer
+                                    </button>
+                                    <button type="submit" className="theme-btn">
+                                        Payer
+                                    </button>
+                                </div>
+                            </form>
+                        </Modal>
 
                         <div id="Donations">
                             <div className="tp-donations-amount" >
@@ -146,7 +216,7 @@ const ActionSolidaire = (props) => {
                                 <p style={{ color: 'black', }} className='mt-3'>Description de l'action ...Description de l'action ...Description de l'action ...Description de l'action ...Description de l'action ...Description de l'action ...</p>
 
 
-                                <button className="theme-btn" >
+                                <button className="theme-btn" onClick={openModal}>
                                     Je participe en argent <FaHandHoldingUsd />
                                 </button>
                                 <button style={{ marginLeft: 10 }} className="theme-btn" onClick={() => handleDonNatureClick()}>

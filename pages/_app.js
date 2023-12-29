@@ -21,6 +21,8 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>JAPNACI</title>
         <link href="https://db.onlinewebfonts.com/c/fa30bb8e68abc85645bb4385e02d0e24?family=Buddy+Champion" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..."
+    crossorigin="anonymous" />
 
       </Head>
       <Component {...pageProps} />
