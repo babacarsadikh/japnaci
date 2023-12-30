@@ -1,9 +1,23 @@
-import React from 'react'
-import Link  from 'next/link'
+import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-const HeaderTopbar = (props) => {
-    return(	
-        <div className={`topbar ${props.tpClass}`}>
+
+
+const HeaderTopbar = ({ userData, tpClass }) => {
+    const router = useRouter();
+    const handleLogout = () => {
+        if (typeof window !== 'undefined') {
+            // Code de déconnexion ici
+            localStorage.removeItem('userData');
+            router.push('/'); // Rediriger vers la page d'accueil après la déconnexion
+            window.location.reload(); // Rafraîchir la page
+
+        }
+    };
+
+    return (
+        <div className={`topbar ${tpClass}`}>
             <div className="container">
                 <div className="row">
                     <div className="col col-md-6 col-sm-12 col-12">
@@ -17,20 +31,38 @@ const HeaderTopbar = (props) => {
                     <div className="col col-md-6 col-sm-12 col-12">
                         <div className="contact-info">
                             <ul>
-                                <li>
-                                <i className="fas fa-sign-in-alt" style={{ marginRight: '5px',color: '#1d5d1d' }}></i> 
-                                    <Link  style={{ color: '#1d5d1d', display: 'inline',fontWeight:"bold" }} href="/login">Se connecter</Link></li>
-                                <li>
-                                <i className="fas fa-user-plus" style={{ marginRight: '5px' ,color: '#1d5d1d'}}></i> 
-                                    <Link  style={{ color: '#1d5d1d', display: 'inline',fontWeight:"bold" }}  href="/register">S'inscrire</Link></li>
-                                {/* <li><Link className="theme-btn" href="/donate">Faire un don maintenant</Link></li> */}
+                                {userData ? (
+                                    <>
+                                        <li><i className="fas fa-user " style={{ marginRight: '5px', color: '#1d5d1d' }}></i>
+                                            <Link style={{ color: '#1d5d1d', display: 'inline', fontWeight: "bold" }} href="/espaceperso">Mon espace: {userData.username}</Link>
+                                        </li>
+                                        <li>
+                                        <button onClick={handleLogout} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+                                                <i className="fas fa-sign-out-alt" style={{ marginRight: '5px', color: '#1d5d1d',fontWeight: "bold" }}></i>
+                                                Se déconnecter
+                                            </button>
+                                        </li>
+                                        {/* Ajoutez d'autres informations relatives à l'utilisateur si nécessaire */}
+                                    </>
+                                ) : (
+                                    <>
+                                        <li>
+                                            <i className="fas fa-sign-in-alt" style={{ marginRight: '5px', color: '#1d5d1d' }}></i>
+                                            <Link style={{ color: '#1d5d1d', display: 'inline', fontWeight: "bold" }} href="/login">Se connecter</Link>
+                                        </li>
+                                        <li>
+                                            <i className="fas fa-user-plus" style={{ marginRight: '5px', color: '#1d5d1d' }}></i>
+                                            <Link style={{ color: '#1d5d1d', display: 'inline', fontWeight: "bold" }} href="/register">S'inscrire</Link>
+                                        </li>
+                                    </>
+                                )}
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default HeaderTopbar;

@@ -1,4 +1,4 @@
-import React from "react";
+import React , { useState } from "react";
 import Header from '../header';
 
 export default function Navbar(props) {
@@ -12,10 +12,15 @@ export default function Navbar(props) {
   }, []);
 
   const className = scroll > 80 ? "fixed-navbar animated fadeInDown active" : "fixed-navbar";
-
+  const [userData, setUserData] = useState(() => {
+    if (typeof window !== 'undefined' && localStorage.getItem('userData')) {
+        return JSON.parse(localStorage.getItem('userData'));
+    }
+    return null;
+});
   return (
     <div className={className}>
-        <Header tpClass={props.tpClass}/>
+        <Header tpClass={props.tpClass} userData={userData}/>
     </div>
   ); 
 }

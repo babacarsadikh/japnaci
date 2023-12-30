@@ -1,53 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Grid from "@mui/material/Grid";
 import SimpleReactValidator from "simple-react-validator";
 import { toast } from "react-toastify";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { useRouter } from 'next/router'
-import Link from "next/link";
+import { useRouter } from 'next/router';
 import axios from 'axios';
 
 const LoginPage = () => {
     const router = useRouter();
 
-    const [credentials, setCredentials] = useState({
-        email: 'user@gmail.com',
-        password: '123456',
+    const [value, setValue] = useState({
+        email: '',
+        password: '',
     });
 
-    const [loggedInUser, setLoggedInUser] = useState(null);
+    const [validator] = useState(new SimpleReactValidator({
+        className: 'errorMessage',
+        messages: {
+            required: 'Le champ :attribute est requis.',
+        },
+    }));
 
-    const handleInputChange = (e) => {
-        setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    const changeHandler = (e) => {
+        setValue({ ...value, [e.target.name]: e.target.value });
         validator.showMessages();
     };
 
-    const handleRememberCheckbox = () => {
-        setCredentials({ ...credentials, remember: !credentials.remember });
-    };
-
-    const [validator] = React.useState(new SimpleReactValidator({
-        className: 'errorMessage'
-    }));
-
-    const handleSubmit = async (e) => {
+    const submitForm = async (e) => {
         e.preventDefault();
 
-        try {
-            const response = await axios.post('http://localhost:3000/users/login', credentials);
+        if (validator.allValid()) {
+            try {
+                const response = await axios.post('http://localhost:8080/api/auth/signin', {
+                    email: value.email,
+                    password: value.password
+                });
 
-            if (response.data.token) {
-                // Authentification réussie
-                setLoggedInUser({ username: response.data.username });
-                router.push('/');
-            } else {
-                // Authentification échouée
-                toast.error("Identifiants invalides");
+                if (response.data.etat === "bakhna") {
+                    // Assurez-vous que localStorage est défini avant de l'utiliser
+                    if (typeof localStorage !== 'undefined') {
+                        localStorage.setItem('userData', JSON.stringify(response.data));
+                    }
+                    router.push('/');
+                    toast.success('Vous vous êtes connecté avec succès sur JAPNACI !');
+                }
+            } catch (error) {
+                console.error('Erreur lors de la récupération des données:', error);
+                toast.error('Erreur lors de la connexion. Veuillez réessayer.');
             }
-        } catch (error) {
-            console.error("Erreur lors de l'authentification :", error);
-            toast.error("Une erreur s'est produite lors de l'authentification");
+        } else {
+            validator.showMessages();
+            toast.error('Veuillez remplir correctement les champs.');
         }
     };
 
@@ -56,53 +60,50 @@ const LoginPage = () => {
             <Grid className="loginForm">
                 <h2 style={{ color: "#1d5d1d", fontFamily: 'Buddy Champion', fontSize: "50px" }}>JAPNACI</h2>
                 <p style={{ color: "black", fontSize: "14px" }}>Pour vous connecter, veuillez saisir votre adresse email et votre mot de passe.</p>
-                <form onSubmit={handleSubmit}>
+
+                <form>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
                             <TextField
                                 className="inputOutline"
                                 fullWidth
-                                placeholder="Email"
-                                value={credentials.email}
+                                placeholder="Adresse mail"
+                                value={value.email}
                                 variant="outlined"
                                 name="email"
-                                label="Email"
+                                label="Adresse mail"
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
-                                onBlur={handleInputChange}
-                                onChange={handleInputChange}
+                                onBlur={changeHandler}
+                                onChange={changeHandler}
                             />
-                            {validator.message('email', credentials.email, 'required|email')}
+                            <span style={{ color: 'red' }}>{validator.message('email', value.email, 'required')}</span>
                         </Grid>
                         <Grid item xs={12}>
                             <TextField
                                 className="inputOutline"
                                 fullWidth
-                                placeholder="Mot de passe"
-                                value={credentials.password}
+                                placeholder="Password"
+                                value={value.password}
                                 variant="outlined"
                                 name="password"
                                 type="password"
-                                label="Mot de passe"
+                                label="Password"
                                 InputLabelProps={{
                                     shrink: true,
                                 }}
-                                onBlur={handleInputChange}
-                                onChange={handleInputChange}
+                                onBlur={changeHandler}
+                                onChange={changeHandler}
                             />
-                            {validator.message('password', credentials.password, 'required')}
+                            <span style={{ color: 'red' }}>{validator.message('password', value.password, 'required')}</span>
                         </Grid>
                         <Grid item xs={12}>
-                            <Grid className="formFooter">
-                                <Button fullWidth className="cBtnTheme" type="submit" style={{ backgroundColor: "#1d5d1d", fontSize: "15px" }}>Se connecter</Button>
-                            </Grid>
-                            <p className="noteHelp" >Vous n'avez pas de compte ? <Link href="/register" style={{ color: "#1d5d1d", fontSize: "15px" }}>Créer un compte </Link></p>
+                            <Button fullWidth className="cBtnTheme" onClick={submitForm}>Login</Button>
                         </Grid>
                     </Grid>
                 </form>
             </Grid>
-          
         </Grid>
     );
 };
