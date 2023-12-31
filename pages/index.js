@@ -20,7 +20,7 @@ const HomePage = () => {
         <Fragment>
             <Navbar />
             <Hero />
-            {/* <About /> */}
+            <About />
             {/* <Features /> */}
             <Causes />
             <CtaSection />
