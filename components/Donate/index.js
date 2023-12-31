@@ -267,7 +267,7 @@ const Donate = (props) => {
                                         } else {
                                             getParams();
 
-                                            // alert('Veuillez saisir le montant avant de continuer.');
+                                             alert('Veuillez saisir le montant avant de continuer.');
                                         }
                                     }} type="submit" className="theme-btn submit-btn">Payez le don</button>
                                 </div>
