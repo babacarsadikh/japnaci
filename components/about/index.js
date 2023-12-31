@@ -27,8 +27,10 @@ const About = (props) => {
                             <h1 style={{ color: '#1d5d1d', display: 'inline-block', marginLeft: '0.5em' }}>A PROPOS DE JAPNACI</h1>
                                 {/* <h2>Khairah is <span>Nonprofit</span> Organization <span>For Help</span> Children.</h2> */}
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                         <Link onClick={ClickHandler} href=""><span style={{ color: '#1d5d1d' }}>En savoir plus...</span></Link>   
+                            <p>JAPNACI est une plateforme conçue par le Mouvement Actions Citoyennes  (M.A.C)  pour simplifier et optimiser le processus de collecte de dons à travers des actions de solidarité qui vise l'ensemble de nos concitoyens ou qu'ils puissent se trouver
+A travers cette plate-forme il sera possible grâce aux dons et a l'implication de tous de lutter efficacement et de manière visible contre la pauvreté et les inégalités mais également permettre a nos concitoyens a travers des mécanismes d'accompagnement  financier mais aussi de renforcement de capacites d'entrevoir sérieusement un développement économique et personnel.
+A travers cette plate-forme dediée aux dons <span> <a style={{ color: '#1d5d1d'}} >voir plus ...</a></span></p>
+                         {/* <Link onClick={ClickHandler} href=""><span style={{ color: '#1d5d1d' }}>En savoir plus...</span></Link>    */}
                             {/* <div className="ab-icon-area">
                                 <div className="about-icon-wrap">
                                     <div className="about-icon-item">

@@ -129,7 +129,10 @@ const DonateNature = (props) => {
                         <div id="Donations">
                             <form onSubmit={SubmitHandler} action="#">
                                 <div className="tp-donations-amount" >
-                                    <h2>Le don en nature représente une forme tangible de générosité, vous offrant la possibilité de contribuer avec des produits dès qu'ils sont consommables et utilisables.</h2>
+                                    <h2>
+                                    Vous avez envie de faire des dons en produits alimentaires ou des articles d'habillement et autres accessoires plutôt que de l'argent? C'est possible!
+                                    </h2>
+                                        {/* <h2>Le don en nature représente une forme tangible de générosité, vous offrant la possibilité de contribuer avec des produits dès qu'ils sont consommables et utilisables.</h2> */}
                                    
                                   
 

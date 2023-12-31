@@ -52,6 +52,7 @@ const DonSang = (props) => {
 
 
     const SubmitHandler = (e) => {
+        router.push('/contact')
         e.preventDefault()
     }
     const [selectedCountry, setSelectedCountry] = useState(null);

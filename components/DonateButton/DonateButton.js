@@ -39,7 +39,7 @@ const DonateButton = () => {
            style={buttonStyles}
            onMouseEnter={() => setIsHovered(true)}
            onMouseLeave={() => setIsHovered(false)}
-          href="/donation" className="theme-btn">
+          href="/donate" className="theme-btn">
              <img
           src="/images/charite.png"  // Chemin vers votre image
           alt="Donate Icon"

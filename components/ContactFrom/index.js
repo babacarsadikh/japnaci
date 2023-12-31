@@ -113,7 +113,7 @@ class ContactForm extends Component {
                     </div>
                     <div className="col-lg-12">
                         <div className="form-submit">
-                            <button type="submit" className="theme-btn">Send Message</button>
+                            <button type="submit" className="theme-btn">Envoyer</button>
                         </div>
                     </div>
                 </div>

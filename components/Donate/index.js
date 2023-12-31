@@ -262,7 +262,7 @@ const Donate = (props) => {
                                 </div>
                                 <div className="submit-area sub-btn">
                                     <button onClick={(e) => {
-                                        if (montant.value !== '') {
+                                        if (montant.value !== ''  ) {
                                             getParams();
                                         } else {
                                             getParams();
