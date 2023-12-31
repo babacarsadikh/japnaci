@@ -11,12 +11,11 @@ import Causes from '../../api/cause'
 import { PhoneInput } from 'react-international-phone';
 import "react-international-phone/style.css";
 import { useRouter } from 'next/router';
-import { FaBox } from 'react-icons/fa';
+import { FaTint } from 'react-icons/fa';
 
 
 
-
-const DonateNature = (props) => {
+const DonSang = (props) => {
     function getParams() {
         const phoneNumberWithoutCountryCode = phone ? phone.replace(/^(\+\d{1,3}\s?)?/, '') : '';
 
@@ -65,13 +64,13 @@ const DonateNature = (props) => {
 
     const { causeId } = router.query; // Récupérez le paramètre 'causeId' de l'URL
     const selectedCause = Causes.find((cause) => cause.id === causeId);
+    const handleDonNatureClick = () => {
+        // Rediriger vers la page donateNature
+        router.push('/donateNature');
+    };
     const handleDonClick = () => {
         // Rediriger vers la page donateNature
         router.push('/donate');
-    };
-    const handleDonSangClick = () => {
-        // Rediriger vers la page donateNature
-        router.push('/dondesang');
     };
 
     useEffect(() => {
@@ -114,14 +113,15 @@ const DonateNature = (props) => {
                     <div className="col-lg-8 offset-lg-2">
 
                     <div className="tp-doanation-payment" style={{ textAlign: 'center', background: '#1d5d1d', position: 'relative' }}>
-                            <div><h1 style={{color:'white'}}>FAIRE UN DON EN NATURE</h1></div>
+                            <div><h1 style={{color:'white'}}>FAIRE UN DON DE SANG </h1></div>
                             <div style={{ display: 'flex', justifyContent: 'center' ,marginTop: '-0%' }}>
                                  <span onClick={handleDonClick} style={{ cursor: 'pointer', marginRight: '20px',color:'white' , textDecoration: 'underline' }}>Cliquez pour faire un don financier.</span>
-                                 <span onClick={handleDonSangClick} style={{ cursor: 'pointer', color: 'white', textDecoration: 'underline' }}>Cliquez pour faire un don de sang</span>
+                                 
+                                 <span onClick={handleDonNatureClick} style={{ cursor: 'pointer', marginRight: '20px', color: 'white', textDecoration: 'underline' }}>Cliquez pour faire un don en natures</span>
                             </div>
                              {/* Ajouter une icône de don */}
-            <div style={{ position: 'absolute', top: -10, left: -26, zIndex: 2, color: '#1d5d1d', borderRadius: '50%', background: 'white', padding: '25px' }}>
-                <FaBox size={30} />
+            <div style={{ position: 'absolute', top: -10, left: -26, zIndex: 2, color: 'red', borderRadius: '50%', background: 'white', padding: '25px' }}>
+                <FaTint size={30} />
             </div>
                         </div>
 
@@ -129,8 +129,20 @@ const DonateNature = (props) => {
                         <div id="Donations">
                             <form onSubmit={SubmitHandler} action="#">
                                 <div className="tp-donations-amount" >
-                                    <h2>Le don en nature représente une forme tangible de générosité, vous offrant la possibilité de contribuer avec des produits dès qu'ils sont consommables et utilisables.</h2>
-                                   
+                                    <p>
+                                    Vous avez entre 18 et 70 ans révolus ? Vous pesez plus de 50 kilos ? 
+Bonne nouvelle, vous avez probablement un grand pouvoir, celui de sauver des vies en donnant votre sang ! 
+
+Vous pouvez donner jusqu’à 6 fois par an pour les hommes et jusqu’à 4 fois pour les femmes.
+
+Pour savoir dès maintenant si vous pouvez faire un don, faites le test en ligne.
+
+Attention, un donneur averti en vaut deux : seul le personnel de santé de l’EFS peut confirmer que vous pouvez donner le jour de votre don à l'issue de votre entretien médical. 
+                                        </p>
+
+                                   <div className="submit-area sub-btn">
+                                    <button type="submit" className="theme-btn submit-btn">Prendre rendez-vous</button>
+                                </div>
                                   
 
 
@@ -146,4 +158,4 @@ const DonateNature = (props) => {
     )
 }
 
-export default DonateNature;
+export default DonSang;
