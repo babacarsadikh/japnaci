@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import abimg from '/public/images/about/img-1.jpg'
+import abimg from '/public/images/about/about.jpg'
 import abimg2 from '/public/images/about/1.png'
 import abimg3 from '/public/images/about/2.png'
 import abimg4 from '/public/images/shape/shape2.png'
@@ -14,8 +14,8 @@ const About = (props) => {
         <div className="about-area">
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-5 col-md-12  grid col-12">
-                        <div className="about-cercle">
+                    <div className="col-lg-5 col-md-12  grid col-12 mt-4">
+                        <div className="">
                             <div className="about-img">
                                 <Image src={abimg} alt="" />
                             </div>
@@ -28,6 +28,7 @@ const About = (props) => {
                                 {/* <h2>Khairah is <span>Nonprofit</span> Organization <span>For Help</span> Children.</h2> */}
                             </div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                         <Link onClick={ClickHandler} href=""><span style={{ color: '#1d5d1d' }}>En savoir plus...</span></Link>   
                             {/* <div className="ab-icon-area">
                                 <div className="about-icon-wrap">
                                     <div className="about-icon-item">
