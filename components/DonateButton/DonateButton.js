@@ -34,12 +34,12 @@ const DonateButton = () => {
 
   return (
     <div>
-        <div className="slide-btns">
+       <div className="slide-btns">
          <Link
            style={buttonStyles}
            onMouseEnter={() => setIsHovered(true)}
            onMouseLeave={() => setIsHovered(false)}
-          href="/donate" className="theme-btn">
+          href="/donation" className="theme-btn">
              <img
           src="/images/charite.png"  // Chemin vers votre image
           alt="Donate Icon"
@@ -49,7 +49,8 @@ const DonateButton = () => {
            </Link>
        </div>
        
-            {/* <button
+            {
+            /* <button
                 style={buttonStyles}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
@@ -60,7 +61,8 @@ const DonateButton = () => {
                 style={{ marginRight: '5px', width: '25px', height: '25px' }}
                 />
                 {isHovered && <span>Cliquez pour faire un don</span>}
-            </button> */}
+            </button> */
+            }
       
 
      

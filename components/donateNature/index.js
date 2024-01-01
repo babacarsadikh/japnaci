@@ -115,10 +115,10 @@ const DonateNature = (props) => {
 
                     <div className="tp-doanation-payment" style={{ textAlign: 'center', background: '#1d5d1d', position: 'relative' }}>
                             <div><h1 style={{color:'white'}}>FAIRE UN DON EN NATURE</h1></div>
-                            <div style={{ display: 'flex', justifyContent: 'center' ,marginTop: '-0%' }}>
+                            {/* <div style={{ display: 'flex', justifyContent: 'center' ,marginTop: '-0%' }}>
                                  <span onClick={handleDonClick} style={{ cursor: 'pointer', marginRight: '20px',color:'white' , textDecoration: 'underline' }}>Cliquez pour faire un don financier.</span>
                                  <span onClick={handleDonSangClick} style={{ cursor: 'pointer', color: 'white', textDecoration: 'underline' }}>Cliquez pour faire un don de sang</span>
-                            </div>
+                            </div> */}
                              {/* Ajouter une icône de don */}
             <div style={{ position: 'absolute', top: -10, left: -26, zIndex: 2, color: '#1d5d1d', borderRadius: '50%', background: 'white', padding: '25px' }}>
                 <FaBox size={30} />

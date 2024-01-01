@@ -115,10 +115,10 @@ const Donate = (props) => {
 
             <div style={{ zIndex: 1, position: 'relative' }}>
                 <h1 style={{ color: 'white' }}>FAIRE UN DON FINANCIER</h1>
-                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-0%' }}>
+                {/* <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-0%' }}>
                     <span onClick={handleDonNatureClick} style={{ cursor: 'pointer', marginRight: '20px', color: 'white', textDecoration: 'underline' }}>Cliquez pour faire un don en natures</span>
                      <span onClick={handleDonSangClick} style={{ cursor: 'pointer', color: 'white', textDecoration: 'underline' }}>Cliquez pour faire un don de sang</span>
-                </div>
+                </div> */}
             </div>
 
             {/* Ajouter une icône de don */}
