@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import pmt1 from '/public/images/partners/payment.png'
 import pmt2 from '/public/images/checkout/img-2.png'
@@ -39,9 +39,9 @@ const Donate = (props) => {
             'Dakar', mail, '', '', phoneNumberWithoutCountryCode);
 
     }
+    const fullnameRef = useRef();
 
     const [phone, setPhone] = useState("");
-
     const [mail, setMail] = useState('');
     const [montant, setMontant] = useState(1000); // Initialisez avec 1000 CFA par défaut
     const [montantSaisi, setMontantSaisi] = useState(''); // Pour gérer la saisie utilisateur
@@ -197,11 +197,11 @@ const Donate = (props) => {
                                     <h2>MES COORDONNÉES</h2>
                                     <div className="row">
                                         <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
-                                            <input type="text" className="form-control" name="name" id="fname" placeholder="Nom complet" />
+                                            <input type="text" className="form-control" name="fullname" id="fname" ref={fullnameRef}  placeholder="Nom complet" />
                                         </div>
                                         <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
                                             <select className="form-control" id="donatorStatus" name="donatorStatus">
-                                                <option value="donatorStatus">Selectionner votre statut:</option>
+                                                <option value="donatorStatus">Selectionner votre statut *:</option>
 
                                                 <option value="entreprise">Entreprise</option>
                                                 <option value="particulier">Particulier</option>
@@ -262,12 +262,13 @@ const Donate = (props) => {
                                 </div>
                                 <div className="submit-area sub-btn">
                                     <button onClick={(e) => {
-                                        if (montant.value !== ''  ) {
-                                            getParams();
-                                        } else {
-                                            getParams();
+                                         if (montant.value !== '' && fullnameRef.current.value !== ''  && selectedCountry !== null  && donatorStatus.value !== 'donatorStatus' ) {
+                                          getParams();
+                                          //console.log(fullnameRef.current.value)
+                                         }else {
+                                          //  getParams();
 
-                                             alert('Veuillez saisir le montant avant de continuer.');
+                                             alert(' Veuillez remplir tous les champs obligatoires.');
                                         }
                                     }} type="submit" className="theme-btn submit-btn">Payez le don</button>
                                 </div>
