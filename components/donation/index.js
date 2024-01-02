@@ -14,6 +14,7 @@ import "react-international-phone/style.css";
 import Pays from '../../api/pays';
 import Causes from '../../api/cause';
 import { useRouter } from 'next/router';
+import DonCard from '../donCard';
 
 const Donation = (props) => {
     const [phone, setPhone] = useState("");
@@ -74,7 +75,7 @@ const Donation = (props) => {
                     <div className="col-lg-8 offset-lg-2">
                         <div className="tp-doanation-payment" style={{ textAlign: 'center', background: '#1d5d1d', position: 'relative' }}>
                             <div><h1 style={{ color: 'white' }}>FAIRE UN DON </h1></div>
-                            <div className="card-container" style={{ display: 'flex', justifyContent: 'center', marginTop: '-0%' }}>
+                            {/* <div className="card-container" style={{ display: 'flex', justifyContent: 'center', marginTop: '-0%' }}>
                                 <Card className="card" sx={{ maxWidth: 200 }}  onClick={handleDonClick}>
                                     <CardActionArea>
                                         <CardMedia
@@ -120,7 +121,19 @@ const Donation = (props) => {
                                         </CardContent>
                                     </CardActionArea>
                                 </Card>
-                            </div>
+                            </div> */}
+                            <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-around',
+          flexWrap: 'wrap',
+        }}
+      >
+        <DonCard title="Don financier" iconSrc={pmt1.src} onClick={handleDonClick}/>
+       <DonCard title="Don en nature" iconSrc={pmt3.src}  onClick={handleDonNatureClick}/>
+        <DonCard title="Don de sang" iconSrc={pmt2.src} onClick={handleDonSangClick}/> 
+      </div>
+
                             <div style={{ position: 'absolute', top: -10, left: -26, zIndex: 2, color: '#1d5d1d', borderRadius: '50%', background: 'white', padding: '25px' }}>
                                 <FaBox size={30} />
                             </div>
