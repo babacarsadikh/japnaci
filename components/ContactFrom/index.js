@@ -36,19 +36,19 @@ class ContactForm extends Component {
             notes, error } = this.state;
 
         if (name === '') {
-            error.name = "Please enter your name";
+            error.name = "S'il vous plaît entrez votre nom et prénom";
         }
         if (email === '') {
-            error.email = "Please enter your email";
+            error.email = "Veuillez entrer votre email";
         }
         if (subject === '') {
-            error.subject = "Please enter your subject";
+            error.subject = "Veuillez renseigenr votre adresse";
         }
         if (lastname === '') {
-            error.lastname = "Please enter your Lastname";
+            error.lastname = "Veuillez entrer votre numero de telephone";
         }
         if (events === '') {
-            error.events = "Select your event list";
+            error.events = "Sélectionnez votre liste d'événements";
         }
         if (notes === '') {
             error.notes = "Please enter your note";
@@ -100,7 +100,7 @@ class ContactForm extends Component {
                             <p>{error.lastname ? error.lastname : ''}</p>
                         </div>
                     </div>
-                    <div className="col-lg-6 col-md-6 col-12">
+                    {/* <div className="col-lg-6 col-md-6 col-12">
                         <select className="form-control" id="donatorStatus" name="donatorStatus">
                             <option value="donatorStatus">Type de don  *:</option>
 
@@ -109,17 +109,17 @@ class ContactForm extends Component {
                             <option value="particulier">Don de sang</option>
 
                         </select>
-                    </div>
+                    </div> */}
 
                     <div className="col-lg-6 col-md-6 col-12">
                         <div className="form-field">
-                            <input onChange={this.changeHandler} value={subject} type="text" name="subject" placeholder="Adresse *" />
+                            <input onChange={this.changeHandler} value={subject} type="text" name="subject" placeholder="Region ,Departement ,Commune ... *" />
                             <p>{error.subject ? error.subject : ''}</p>
                         </div>
                     </div>
                     <div className="col-lg-12">
                         <div className="form-field">
-                            <textarea name="message" placeholder="Description détaillée des articles ..."></textarea>
+                            <textarea name="message" placeholder="Description de votre don ..."></textarea>
                         </div>
                     </div>
                     <div className="col-lg-12">

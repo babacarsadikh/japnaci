@@ -142,13 +142,13 @@ const ActionSolidaire = (props) => {
                                     left: 'auto',
                                     right: 'auto',
                                     bottom: 'auto',
-                                    border: '1px solid #ccc',
+                                    border: '2px solid #ccc',
                                     background: '#fff',
                                     overflow: 'auto',
                                     WebkitOverflowScrolling: 'touch',
                                     borderRadius: '4px',
                                     outline: 'none',
-                                    padding: '20px',
+                                    padding: '40px',
                                     maxWidth: '400px',
                                     textAlign: 'center',
                                     margin: 'auto',
@@ -157,18 +157,20 @@ const ActionSolidaire = (props) => {
                         >
                             <h2 style={{ color: "#1d5d1d", fontSize: "20px", textAlign: "center" }}>Saisir votre numéro de téléphone et un montant</h2>
                             
-                                <label>
+                                <label  style={{ }}>
                                     Numéro de téléphone:
                                     <PhoneInput
+                                     style={{ display: 'flex' }}
                                         defaultCountry="sn"
                                         value={phone}
                                         onChange={(value) => setPhone(value)}
-                                        className="form-control no-border mr-5"
+                                        className="no-border mr-5"
 
                                     />
                                 </label>
                                 
-                                <label>
+                               <div className='row'>
+                               <label  style={{ display: 'flex', flexDirection: 'column' }}>
                                     Montant:
                                     <div className=' d-flex align-items-center'>
                                     <input
@@ -184,6 +186,20 @@ const ActionSolidaire = (props) => {
                                     </div>
                                   
                                 </label>
+                               </div>
+                               <label style={{ display: 'flex', flexDirection: 'column' }}>
+    <div className='col' >Adresse :</div>
+    <div className='col '>
+        <input
+            type="text"
+            value=""
+            //onChange={(e) => setMontantSaisi(e.target.value)}
+            className="form-control no-border"
+            placeholder='Region ,Departement ,Commune ...'
+        />
+    </div>
+</label>
+
                                 <div style={{ marginTop: '20px' }}>
                                     <button style={{ marginRight: '10px' }} type="button" className="theme-btn" onClick={() => setIsModalOpen(false)}>
                                         Fermer

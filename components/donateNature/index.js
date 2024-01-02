@@ -53,6 +53,7 @@ const DonateNature = (props) => {
 
 
     const SubmitHandler = (e) => {
+        router.push('/contact')
         e.preventDefault()
     }
     const [selectedCountry, setSelectedCountry] = useState(null);
@@ -132,6 +133,10 @@ const DonateNature = (props) => {
                                     <h2>
                                         Vous avez envie de faire des dons en produits alimentaires ou des articles d'habillement et autres accessoires plutôt que de l'argent? C'est possible!
                                     </h2>
+                                    <br/>
+                                    <div className="submit-area sub-btn">
+                                    <button type="submit" className="theme-btn submit-btn">contactez-vous</button>
+                                </div>
                                     {/* <h2>Le don en nature représente une forme tangible de générosité, vous offrant la possibilité de contribuer avec des produits dès qu'ils sont consommables et utilisables.</h2> */}
 
 
