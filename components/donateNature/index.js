@@ -135,7 +135,7 @@ const DonateNature = (props) => {
                                     </h2>
                                     <br/>
                                     <div className="submit-area sub-btn">
-                                    <button type="submit" className="theme-btn submit-btn">contactez-vous</button>
+                                    <button type="submit" className="theme-btn submit-btn">contactez-nous</button>
                                 </div>
                                     {/* <h2>Le don en nature représente une forme tangible de générosité, vous offrant la possibilité de contribuer avec des produits dès qu'ils sont consommables et utilisables.</h2> */}
 
