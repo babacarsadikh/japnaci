@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import pmt1 from '/public/images/partners/payment.png'
+import pmt1 from '/public/images/about/img-dons-honneur.png'
 import pmt2 from '/public/images/checkout/img-2.png'
 import pmt3 from '/public/images/checkout/img-3.png'
 import pmt4 from '/public/images/checkout/img-4.png'

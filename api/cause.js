@@ -24,7 +24,7 @@ const Causes = [
         Goal:'300000',
         Raised:'90000',
         authorName:'Laura Faiary',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        description:"Avec votre aide, nous améliorons la vie des personnes qui ont moins de chance. Ensemble, nous offrons des chances d'éducation, améliorons les soins de santé, et assurons que tout le monde a assez à manger. Rejoignez-nous pour construire des communautés plus fortes et solidaires. Découvrez des histoires inspirantes de gens dont la vie a changé grâce à des actions comme les nôtres."
     },
     {
         id: '2',
@@ -44,12 +44,13 @@ const Causes = [
         cImg:cimg3,
         cImgSingle:cimgSingle3,
         process:'85',
-        cTitle: 'Construction de puits  ', 
+        cTitle: 'Accompagnement financier', 
         slug:'Send-Child-to-School-for-a-Year',
         Goal:'1000000',
         Raised:'200000',
         authorName:'Laura Faiary',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        description:'Chaque contribution compte pour ceux qui font face à des défis économiques. Votre soutien permet de créer un filet de sécurité financier, offrant des ressources directes et des subventions.Nous voulons vous donner les moyens de changer des vies en favorisant la stabilité financière. Ensemble, construisons une société plus équitable et résiliente.        '
+
 
     },
 

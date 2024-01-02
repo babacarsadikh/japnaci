@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import Navbar from '../../components/Navbar'
 import PageTitle from '../../components/pagetitle'
 import Features from '../../components/Features'
-import About2 from '../../components/about2'
+import About2 from '../../components/about'
 import TeamSection from '../../components/team'
 import Testimonial from '../../components/Testimonial'
 import CounterSection from '../../components/counter'
@@ -14,12 +14,9 @@ const CasePage =() => {
     return(
         <Fragment>
             <Navbar/>
-            <PageTitle pageTitle={'About Us'} pagesub={'About'}/> 
+            {/* <PageTitle pageTitle={'About Us'} pagesub={'About'}/>  */}
             <About2/>
-            <Features/>
-            <TeamSection/>
-            <Testimonial/>
-            <CounterSection/>
+            
             <Footer/>
             <Scrollbar/>
         </Fragment>

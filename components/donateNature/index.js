@@ -11,7 +11,7 @@ import Causes from '../../api/cause'
 import { PhoneInput } from 'react-international-phone';
 import "react-international-phone/style.css";
 import { useRouter } from 'next/router';
-import { FaBox } from 'react-icons/fa';
+import { FaLeaf } from 'react-icons/fa';
 
 
 
@@ -113,16 +113,16 @@ const DonateNature = (props) => {
                 <div className="row">
                     <div className="col-lg-8 offset-lg-2">
 
-                    <div className="tp-doanation-payment" style={{ textAlign: 'center', background: '#1d5d1d', position: 'relative' }}>
-                            <div><h1 style={{color:'white'}}>FAIRE UN DON EN NATURE</h1></div>
+                        <div className="tp-doanation-payment" style={{ textAlign: 'center', background: '#1d5d1d', position: 'relative' }}>
+                            <div><h1 style={{ color: 'white' }}>FAIRE UN DON EN NATURE</h1></div>
                             {/* <div style={{ display: 'flex', justifyContent: 'center' ,marginTop: '-0%' }}>
                                  <span onClick={handleDonClick} style={{ cursor: 'pointer', marginRight: '20px',color:'white' , textDecoration: 'underline' }}>Cliquez pour faire un don financier.</span>
                                  <span onClick={handleDonSangClick} style={{ cursor: 'pointer', color: 'white', textDecoration: 'underline' }}>Cliquez pour faire un don de sang</span>
                             </div> */}
-                             {/* Ajouter une icône de don */}
-            <div style={{ position: 'absolute', top: -10, left: -26, zIndex: 2, color: '#1d5d1d', borderRadius: '50%', background: 'white', padding: '25px' }}>
-                <FaBox size={30} />
-            </div>
+                            {/* Ajouter une icône de don */}
+                            <div style={{ position: 'absolute', top: -10, left: -26, zIndex: 2, color: '#1d5d1d', borderRadius: '50%', background: 'white', padding: '25px' }}>
+                                <FaLeaf size={30} />
+                            </div>
                         </div>
 
 
@@ -130,16 +130,16 @@ const DonateNature = (props) => {
                             <form onSubmit={SubmitHandler} action="#">
                                 <div className="tp-donations-amount" >
                                     <h2>
-                                    Vous avez envie de faire des dons en produits alimentaires ou des articles d'habillement et autres accessoires plutôt que de l'argent? C'est possible!
+                                        Vous avez envie de faire des dons en produits alimentaires ou des articles d'habillement et autres accessoires plutôt que de l'argent? C'est possible!
                                     </h2>
-                                        {/* <h2>Le don en nature représente une forme tangible de générosité, vous offrant la possibilité de contribuer avec des produits dès qu'ils sont consommables et utilisables.</h2> */}
-                                   
-                                  
+                                    {/* <h2>Le don en nature représente une forme tangible de générosité, vous offrant la possibilité de contribuer avec des produits dès qu'ils sont consommables et utilisables.</h2> */}
+
+
 
 
                                 </div>
-                            
-                               
+
+
                             </form>
                         </div>
                     </div>

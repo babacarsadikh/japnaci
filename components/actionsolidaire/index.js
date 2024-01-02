@@ -199,11 +199,11 @@ const ActionSolidaire = (props) => {
                             <div className="tp-donations-amount" >
                                 {selectedCause ? (
                                     <div >
-                                        <p style={{ color: 'black', }}>BUT : {selectedCause.Goal} CFA</p>
-                                        <p style={{ color: 'black', }}>Recueillis : {selectedCause.Raised} CFA</p>
+                                        {/* <p style={{ color: 'black', }}>BUT : {selectedCause.Goal} CFA</p>
+                                        <p style={{ color: 'black', }}>Recueillis : {selectedCause.Raised} CFA</p> */}
                                         {/* Ajoutez d'autres informations que vous souhaitez afficher */}
                                         {/* Barre de progression pour le montant recueilli par rapport au but */}
-                                        <div style={{ width: '100%', backgroundColor: '#eee', borderRadius: '5px', marginTop: '10px' }}>
+                                        {/* <div style={{ width: '100%', backgroundColor: '#eee', borderRadius: '5px', marginTop: '10px' }}>
                                             <div
                                                 style={{
                                                     width: `${percentageRaised}%`,
@@ -217,8 +217,8 @@ const ActionSolidaire = (props) => {
                                             >
                                                 {percentageRaised.toFixed(2)}%
                                             </div>
-                                        </div>
-                                        <p style={{ color: 'black', }} className='mt-3'> Description : {selectedCause.description}</p>
+                                        </div> */}
+                                        <p style={{ color: 'black', }} className='mt-3'>{selectedCause.description}</p>
 
                                     </div>
                                     

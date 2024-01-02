@@ -11,7 +11,7 @@ import Causes from '../../api/cause'
 import { PhoneInput } from 'react-international-phone';
 import "react-international-phone/style.css";
 import { useRouter } from 'next/router';
-import { FaHandHoldingHeart } from 'react-icons/fa';  // Importer une icône de don (par exemple, celle-ci est de FontAwesome)
+import { FaMoneyBill } from 'react-icons/fa';  // Importer une icône de don (par exemple, celle-ci est de FontAwesome)
 
 
 const Donate = (props) => {
@@ -48,6 +48,10 @@ const Donate = (props) => {
     const [isMontant1000Selected, setIsMontant1000Selected] = useState(true); // Pour gérer la sélection du bouton radio
     const [isAutreMontantSelected, setIsAutreMontantSelected] = useState(false);
     const [isMontantInputVisible, setIsMontantInputVisible] = useState(true); // Ajout de cet état
+    const [region, setRegion] = useState('');
+    const [departement, setDepartement] = useState('');
+    const [adresse, setAdresse] = useState('');
+
 
 
     const SubmitHandler = (e) => {
@@ -111,21 +115,21 @@ const Donate = (props) => {
                 <div className="row">
                     <div className="col-lg-8 offset-lg-2">
 
-                    <div className="tp-doanation-payment" style={{ textAlign: 'center', background: '#1d5d1d', position: 'relative' }}>
+                        <div className="tp-doanation-payment" style={{ textAlign: 'center', background: '#1d5d1d', position: 'relative' }}>
 
-            <div style={{ zIndex: 1, position: 'relative' }}>
-                <h1 style={{ color: 'white' }}>FAIRE UN DON FINANCIER</h1>
-                {/* <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-0%' }}>
+                            <div style={{ zIndex: 1, position: 'relative' }}>
+                                <h1 style={{ color: 'white' }}>FAIRE UN DON FINANCIER</h1>
+                                {/* <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-0%' }}>
                     <span onClick={handleDonNatureClick} style={{ cursor: 'pointer', marginRight: '20px', color: 'white', textDecoration: 'underline' }}>Cliquez pour faire un don en natures</span>
                      <span onClick={handleDonSangClick} style={{ cursor: 'pointer', color: 'white', textDecoration: 'underline' }}>Cliquez pour faire un don de sang</span>
                 </div> */}
-            </div>
+                            </div>
 
-            {/* Ajouter une icône de don */}
-            <div style={{ position: 'absolute', top: -10, left: -26, zIndex: 2, color: '#1d5d1d', borderRadius: '50%', background: 'white', padding: '25px' }}>
-                <FaHandHoldingHeart size={30} />
-            </div>
-        </div>
+                            {/* Ajouter une icône de don */}
+                            <div style={{ position: 'absolute', top: -10, left: -26, zIndex: 2, color: '#1d5d1d', borderRadius: '50%', background: 'white', padding: '25px' }}>
+                                <FaMoneyBill size={30} />
+                            </div>
+                        </div>
 
 
                         <div id="Donations">
@@ -197,7 +201,7 @@ const Donate = (props) => {
                                     <h2>MES COORDONNÉES</h2>
                                     <div className="row">
                                         <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
-                                            <input type="text" className="form-control" name="fullname" id="fname" ref={fullnameRef}  placeholder="Nom complet" />
+                                            <input type="text" className="form-control" name="fullname" id="fname" ref={fullnameRef} placeholder="Nom complet" />
                                         </div>
                                         <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
                                             <select className="form-control" id="donatorStatus" name="donatorStatus">
@@ -222,7 +226,7 @@ const Donate = (props) => {
                                                 value={selectedCountry}
                                                 onChange={handleCountryChange}
                                             >
-                                                <option value="">Sélectionnez votre pays</option>
+                                                <option value="">Sélectionnez votre pays *</option>
                                                 {Pays.map(country => (
                                                     <option key={country.code} value={country.code}>
                                                         {country.name}
@@ -230,7 +234,7 @@ const Donate = (props) => {
                                                 ))}
                                             </select>
                                         </div>
-                                        <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group">
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group mb-3">
                                             {/* <input type="text" className="form-control" name="Adress" id="Adress" placeholder="Telephone" /> */}
                                             <PhoneInput
                                                 className="form-control"
@@ -240,6 +244,17 @@ const Donate = (props) => {
 
                                             />
                                         </div>
+                                        <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group mt-4">
+                                                <input type="text" className="form-control" name="region" id="region" placeholder="Région" value={region} onChange={(e) => setRegion(e.target.value)} />
+                                            </div>
+                                            
+                                            <div className="col-lg-6 col-md-6 col-sm-6 col-12 form-group mt-4">
+                                                <input type="text" className="form-control" name="departement" id="departement" placeholder="Département" value={departement} onChange={(e) => setDepartement(e.target.value)} />
+                                            </div>
+                                            <div className="col-lg-12 col-md-12 col-sm-12 col-12 form-group">
+                                                <input type="text" className="form-control" name="adresse" id="adresse" placeholder="Adresse" value={adresse} onChange={(e) => setAdresse(e.target.value)} />
+                                            </div>
+
                                         <div className="col-lg-12 col-12 mt-3 form-group">
                                             <textarea className="form-control" name="note" id="note" placeholder="Ecrivez un brief message (facultatif)"></textarea>
                                         </div>
@@ -262,13 +277,13 @@ const Donate = (props) => {
                                 </div>
                                 <div className="submit-area sub-btn">
                                     <button onClick={(e) => {
-                                         if (montant.value !== '' && fullnameRef.current.value !== ''  && selectedCountry !== null  && donatorStatus.value !== 'donatorStatus' ) {
-                                          getParams();
-                                          //console.log(fullnameRef.current.value)
-                                         }else {
-                                          //  getParams();
+                                        if (montant.value !== '' && fullnameRef.current.value !== '' && selectedCountry !== null && donatorStatus.value !== 'donatorStatus') {
+                                            getParams();
+                                            //console.log(fullnameRef.current.value)
+                                        } else {
+                                            //  getParams();
 
-                                             alert(' Veuillez remplir tous les champs obligatoires.');
+                                            alert(' Veuillez remplir tous les champs obligatoires.');
                                         }
                                     }} type="submit" className="theme-btn submit-btn">Payez le don</button>
                                 </div>

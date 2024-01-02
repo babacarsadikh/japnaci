@@ -34,10 +34,10 @@ const CauseSection = (props) => {
                                     </div>
                                 </div>
                                 <div className="cause-text">
-                                    <ul>
+                                    {/* <ul>
                                         <li><Link onClick={ClickHandler} href="/">BUT : {Cause.Goal} CFA</Link></li>
                                         <li><Link onClick={ClickHandler} href="/">Recueillis : {Cause.Raised} CFA</Link></li>
-                                    </ul>
+                                    </ul> */}
                                     <h3><Link onClick={ClickHandler} href='/cause-single/[slug]' as={`/cause-single/${Cause.slug}`}>{Cause.cTitle}</Link></h3>
                                 </div>
                             </div>
