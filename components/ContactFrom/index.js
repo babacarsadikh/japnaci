@@ -7,8 +7,8 @@ class ContactForm extends Component {
     state = {
         name: '',
         email: '',
-        subject: '',
-        lastname: '',
+        adresse: '',
+        telephone: '',
         events: '',
         notes: '',
         error: {}
@@ -30,8 +30,8 @@ class ContactForm extends Component {
 
         const { name,
             email,
-            subject,
-            lastname,
+            adresse,
+            telephone,
             events,
             notes, error } = this.state;
 
@@ -41,11 +41,11 @@ class ContactForm extends Component {
         if (email === '') {
             error.email = "Veuillez entrer votre email";
         }
-        if (subject === '') {
-            error.subject = "Veuillez renseigenr votre adresse";
+        if (adresse === '') {
+            error.adresse = "Veuillez renseigenr votre adresse";
         }
-        if (lastname === '') {
-            error.lastname = "Veuillez entrer votre numero de telephone";
+        if (telephone === '') {
+            error.telephone = "Veuillez entrer votre numero de telephone";
         }
         if (events === '') {
             error.events = "Sélectionnez votre liste d'événements";
@@ -60,12 +60,12 @@ class ContactForm extends Component {
                 error
             })
         }
-        if (error.name === '' && error.email === '' && error.email === '' && error.lastname === '' && error.subject === '' && error.events === '' && error.notes === '') {
+        if (error.name === '' && error.email === '' && error.email === '' && error.telephone === '' && error.adresse === '' && error.events === '' && error.notes === '') {
             this.setState({
                 name: '',
                 email: '',
-                subject: '',
-                events: '',
+                adresse: '',
+                telephone: '',
                 notes: '',
                 error: {}
             })
@@ -75,8 +75,8 @@ class ContactForm extends Component {
     render() {
         const { name,
             email,
-            subject,
-            lastname,
+            adresse,
+            telephone,
             error } = this.state;
 
         return (
@@ -96,25 +96,16 @@ class ContactForm extends Component {
                     </div>
                     <div className="col-lg-6 col-md-6 col-12">
                         <div className="form-field">
-                            <input value={lastname} onChange={this.changeHandler} type="text" name="lastname" placeholder="Numéro de téléphone *" />
-                            <p>{error.lastname ? error.lastname : ''}</p>
+                            <input value={telephone} onChange={this.changeHandler} type="number" name="telephone" placeholder="Numéro de téléphone *" />
+                            <p>{error.telephone ? error.telephone : ''}</p>
                         </div>
                     </div>
-                    {/* <div className="col-lg-6 col-md-6 col-12">
-                        <select className="form-control" id="donatorStatus" name="donatorStatus">
-                            <option value="donatorStatus">Type de don  *:</option>
-
-                            <option value="entreprise">Don Alimentaire</option>
-                            <option value="particulier">Biens / Matriels</option>
-                            <option value="particulier">Don de sang</option>
-
-                        </select>
-                    </div> */}
+                  
 
                     <div className="col-lg-6 col-md-6 col-12">
                         <div className="form-field">
-                            <input onChange={this.changeHandler} value={subject} type="text" name="subject" placeholder="Region ,Departement ,Commune ... *" />
-                            <p>{error.subject ? error.subject : ''}</p>
+                            <input onChange={this.changeHandler} value={adresse} type="text" name="adresse" placeholder="Region ,Departement ,Commune ... *" />
+                            <p>{error.adresse ? error.adresse : ''}</p>
                         </div>
                     </div>
                     <div className="col-lg-12">

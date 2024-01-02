@@ -11,8 +11,9 @@ const donationPage =() => {
             <Navbar/>
             {/* <PageTitle pageTitle={'Donate Now'} pagesub={'Donate'}/>  */}
             <Donation/>
-            <Footer/>
+           
             <Scrollbar/>
+            <Footer />
         </Fragment>
     )
 };
