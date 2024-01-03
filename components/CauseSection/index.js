@@ -19,8 +19,8 @@ const CauseSection = (props) => {
                     </div>
                 </div>
                 <div className="row" style={{ marginBottom: "5%" }}>
-                    {Causes.slice(0, 6).map((Cause, citem) => (
-                        <div className="col-lg-4 col-md-6 col-12" key={citem}>
+                    {Causes.slice(0, 2).map((Cause, citem) => (
+                        <div className="col-lg-6 col-md-6 col-12" key={citem}>
                             <div className="cause-item">
                                 <div className="cause-top">
                                     <div className="cause-img">
