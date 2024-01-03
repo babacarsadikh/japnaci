@@ -130,16 +130,8 @@ const DonSang = (props) => {
                         <div id="Donations">
                             <form onSubmit={SubmitHandler} action="#">
                                 <div className="tp-donations-amount" >
-                                    <p>
-                                    Vous avez entre 18 et 70 ans révolus ? Vous pesez plus de 50 kilos ? 
-Bonne nouvelle, vous avez probablement un grand pouvoir, celui de sauver des vies en donnant votre sang ! 
-
-Vous pouvez donner jusqu’à 6 fois par an pour les hommes et jusqu’à 4 fois pour les femmes.
-
-Pour savoir dès maintenant si vous pouvez faire un don, faites le test en ligne.
-
-Attention, un donneur averti en vaut deux : seul le personnel de santé de l’EFS peut confirmer que vous pouvez donner le jour de votre don à l'issue de votre entretien médical. 
-                                        </p>
+                                    <p>Vous avez entre 18 et 70 ans révolus ? Vous pesez plus de 50 kilos ? Bonne nouvelle, vous avez probablement un grand pouvoir, celui de sauver des vies en donnant votre sang ! Vous pouvez donner jusqu’à 6 fois par an pour les hommes et jusqu’à 4 fois pour les femmes. Attention, un donneur averti en vaut deux : seul le personnel de santé du Centre National de Transfusion Sanguine (CNTS) peut confirmer que vous pouvez donner du sang a l'issue de votre entretien médical.
+Nous nous chargeons donc  simplement  de la mise en relation </p>
 
                                    <div className="submit-area sub-btn">
                                     <button type="submit" className="theme-btn submit-btn">Prendre rendez-vous</button>
